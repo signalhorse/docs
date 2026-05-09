@@ -62,26 +62,27 @@ Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `ru
 4. [市场与交易对侧栏](guides/market-sidebar.md)
 5. [图表与周期工具](guides/chart-workspace.md)
 6. [右下角 AI 分析](guides/ai-chart-analysis.md)
-7. [一键自动做单](guides/auto-trade-launcher.md)
-8. [右侧下单面板](guides/order-panel.md)
-9. [持仓页](guides/positions-tab.md)
-10. [挂单页](guides/open-orders-tab.md)
-11. [历史委托页](guides/order-history-tab.md)
-12. [历史持仓页](guides/position-history-tab.md)
-13. [自动做单页](guides/auto-trade-tab.md)
-14. [资产页](guides/assets-tab.md)
-15. [账户管理窗口](guides/account-center.md)
-16. [AI 模型窗口](guides/ai-model-center.md)
-17. [添加账户](guides/add-account.md)
-18. [手动交易](guides/manual-trading.md)
-19. [AI 与自动化](guides/ai-automation.md)
-20. [更新与维护](guides/update-maintenance.md)
-21. [API 附录（高级）](reference/api.md)
+7. [AI 快捷下单窗口](guides/ai-quick-order.md)
+8. [一键自动做单](guides/auto-trade-launcher.md)
+9. [右侧下单面板](guides/order-panel.md)
+10. [持仓页](guides/positions-tab.md)
+11. [挂单页](guides/open-orders-tab.md)
+12. [历史委托页](guides/order-history-tab.md)
+13. [历史持仓页](guides/position-history-tab.md)
+14. [自动做单页](guides/auto-trade-tab.md)
+15. [资产页](guides/assets-tab.md)
+16. [账户管理窗口](guides/account-center.md)
+17. [AI 模型窗口](guides/ai-model-center.md)
+18. [添加账户](guides/add-account.md)
+19. [手动交易](guides/manual-trading.md)
+20. [AI 与自动化](guides/ai-automation.md)
+21. [更新与维护](guides/update-maintenance.md)
+22. [API 附录（高级）](reference/api.md)
 
 ## 当前手册已经覆盖的主题
 
 - 主界面每个核心区域和底部每个主标签页
 - 账户管理、测试网与连通性验证
 - 手动下单、TP / SL、批量清理和结果核对
-- AI 模型管理、右下角 AI 分析结果卡片和一键自动做单入口
+- AI 模型管理、右下角 AI 分析、AI 快捷下单窗口和一键自动做单入口
 - 更新维护和高级 API 附录

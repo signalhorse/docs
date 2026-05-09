@@ -22,6 +22,7 @@
 - [市场与交易对侧栏](market-sidebar.md)
 - [图表与周期工具](chart-workspace.md)
 - [右下角 AI 分析](ai-chart-analysis.md)
+- [AI 快捷下单窗口](ai-quick-order.md)
 - [一键自动做单](auto-trade-launcher.md)
 - [持仓页](positions-tab.md)
 - [挂单页](open-orders-tab.md)
