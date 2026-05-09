@@ -1,0 +1,58 @@
+site_name: Signal Horse 用户手册
+site_description: Signal Horse 本地优先交易工作台使用手册
+docs_dir: docs
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: amber
+      accent: deep orange
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - 首页: index.md
+  - 开始使用:
+      - 安装部署: getting-started/installation.md
+      - 首次启动: getting-started/first-run.md
+  - 使用指南:
+      - 界面导览: guides/ui-tour.md
+      - 添加账户: guides/add-account.md
+      - 手动交易: guides/manual-trading.md
+      - AI 与自动化: guides/ai-automation.md
+      - 更新与维护: guides/update-maintenance.md
+  - 参考:
+      - 常见问题: reference/faq.md
+      - API 附录: reference/api.md
