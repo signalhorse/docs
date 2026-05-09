@@ -13,7 +13,6 @@ theme:
       primary: blue grey
       accent: blue grey
   features:
-    - navigation.instant
     - navigation.tabs
     - navigation.sections
     - navigation.top
@@ -24,6 +23,57 @@ theme:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: zh
+          name: 简体中文
+          default: true
+          build: true
+          link: /docs/
+          theme:
+            language: zh
+        - locale: en
+          name: English
+          build: true
+          link: /docs/en/
+          site_name: Signal Horse User Manual
+          site_description: User guide for the Signal Horse local-first trading workstation
+          theme:
+            language: en
+          nav:
+            - Home: index.md
+            - Getting Started:
+                - Installation: getting-started/installation.md
+                - First Run: getting-started/first-run.md
+                - UI Overview: guides/ui-tour.md
+                - Add Accounts: guides/add-account.md
+            - Interface Guide:
+                - Top Status Bar: guides/top-bar.md
+                - Markets and Symbols Sidebar: guides/market-sidebar.md
+                - Chart and Timeframe Tools: guides/chart-workspace.md
+                - Bottom-Right AI Analysis: guides/ai-chart-analysis.md
+                - AI Quick Order Modal: guides/ai-quick-order.md
+                - One-Click Auto Trade: guides/auto-trade-launcher.md
+                - Positions Tab: guides/positions-tab.md
+                - Open Orders Tab: guides/open-orders-tab.md
+                - Order History Tab: guides/order-history-tab.md
+                - Position History Tab: guides/position-history-tab.md
+                - Auto Trade Tab: guides/auto-trade-tab.md
+                - Assets Tab: guides/assets-tab.md
+                - Right Order Panel: guides/order-panel.md
+                - Account Center: guides/account-center.md
+                - AI Model Center: guides/ai-model-center.md
+            - Workflows:
+                - Manual Trading: guides/manual-trading.md
+                - AI and Automation: guides/ai-automation.md
+                - Updates and Maintenance: guides/update-maintenance.md
+            - Reference:
+                - FAQ: reference/faq.md
+                - API Appendix (Advanced): reference/api.md
 
 markdown_extensions:
   - admonition
