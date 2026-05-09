@@ -9,9 +9,9 @@ Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `ru
 
 !!! tip "建议阅读顺序"
     1. 先看 [首次启动](getting-started/first-run.md)，确认你已经能打开本地 UI。
-    2. 再看 [界面导览](guides/ui-tour.md)，先认清每个区域是干什么的。
-    3. 然后看 [添加账户](guides/add-account.md)，优先接测试网账户。
-    4. 接着看 [手动交易](guides/manual-trading.md)，跑通一次最小交易流程。
+    2. 再看 [界面总览](guides/ui-tour.md)，先认清每个区域是干什么的。
+    3. 然后从“界面详解”里按区域看你最常用的功能页。
+    4. 接着看 [添加账户](guides/add-account.md) 和 [手动交易](guides/manual-trading.md)，跑通一次最小交易流程。
     5. 最后再看 [AI 与自动化](guides/ai-automation.md)。
 
 ## 这套系统能做什么
@@ -57,16 +57,28 @@ Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `ru
 如果你是普通使用者，建议按这条路径阅读：
 
 1. [首次启动](getting-started/first-run.md)
-2. [界面导览](guides/ui-tour.md)
-3. [添加账户](guides/add-account.md)
-4. [手动交易](guides/manual-trading.md)
-5. [AI 与自动化](guides/ai-automation.md)
-6. [更新与维护](guides/update-maintenance.md)
-7. [API 附录（高级）](reference/api.md)
+2. [界面总览](guides/ui-tour.md)
+3. [顶部状态栏](guides/top-bar.md)
+4. [市场与交易对侧栏](guides/market-sidebar.md)
+5. [图表与周期工具](guides/chart-workspace.md)
+6. [右侧下单面板](guides/order-panel.md)
+7. [持仓页](guides/positions-tab.md)
+8. [挂单页](guides/open-orders-tab.md)
+9. [历史委托页](guides/order-history-tab.md)
+10. [历史持仓页](guides/position-history-tab.md)
+11. [自动做单页](guides/auto-trade-tab.md)
+12. [资产页](guides/assets-tab.md)
+13. [账户管理窗口](guides/account-center.md)
+14. [AI 模型窗口](guides/ai-model-center.md)
+15. [添加账户](guides/add-account.md)
+16. [手动交易](guides/manual-trading.md)
+17. [AI 与自动化](guides/ai-automation.md)
+18. [更新与维护](guides/update-maintenance.md)
+19. [API 附录（高级）](reference/api.md)
 
 ## 当前手册已经覆盖的主题
 
-- 主界面区域和基本操作入口
+- 主界面每个核心区域和底部每个主标签页
 - 账户管理、测试网与连通性验证
 - 手动下单、TP / SL、批量清理和结果核对
 - AI 模型管理、AI 分析和自动做单入口

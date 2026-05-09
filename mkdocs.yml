@@ -48,9 +48,22 @@ nav:
   - 开始使用:
       - 安装部署: getting-started/installation.md
       - 首次启动: getting-started/first-run.md
-      - 界面导览: guides/ui-tour.md
+      - 界面总览: guides/ui-tour.md
       - 添加账户: guides/add-account.md
-  - 使用指南:
+  - 界面详解:
+      - 顶部状态栏: guides/top-bar.md
+      - 市场与交易对侧栏: guides/market-sidebar.md
+      - 图表与周期工具: guides/chart-workspace.md
+      - 持仓页: guides/positions-tab.md
+      - 挂单页: guides/open-orders-tab.md
+      - 历史委托页: guides/order-history-tab.md
+      - 历史持仓页: guides/position-history-tab.md
+      - 自动做单页: guides/auto-trade-tab.md
+      - 资产页: guides/assets-tab.md
+      - 右侧下单面板: guides/order-panel.md
+      - 账户管理窗口: guides/account-center.md
+      - AI 模型窗口: guides/ai-model-center.md
+  - 操作流程:
       - 手动交易: guides/manual-trading.md
       - AI 与自动化: guides/ai-automation.md
       - 更新与维护: guides/update-maintenance.md
