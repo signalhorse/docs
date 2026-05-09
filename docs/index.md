@@ -1,20 +1,26 @@
 # Signal Horse 用户手册
 
-Signal Horse 是一个本地优先的加密交易工作台。它把本地浏览器 UI、本地 HTTP API、账户管理、手动下单、TP/SL、AI 分析和自动化交易放在同一套运行环境里，默认通过 `http://127.0.0.1:38182/` 提供服务。
+Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `rust_executor` 提供的本地 UI 使用为主，重点讲清楚怎么在界面里看盘、切交易对、管理账户、手动下单、使用 AI 与查看执行结果。
+
+![Signal Horse 主界面总览](assets/ui/overview.png)
+
+!!! note "截图说明"
+    本手册里的界面截图来自测试环境，目的只是帮助你理解界面布局和操作入口。你自己的账户、价格、持仓和 AI 配置会与截图不同。
 
 !!! tip "建议阅读顺序"
-    1. 先看 [安装部署](getting-started/installation.md)，把程序运行起来。
-    2. 再看 [首次启动](getting-started/first-run.md)，确认服务健康和页面入口。
-    3. 然后看 [添加账户](guides/add-account.md)，优先用测试网或模拟盘完成联通性检查。
-    4. 最后再看 [手动交易](guides/manual-trading.md) 和 [AI 与自动化](guides/ai-automation.md)。
+    1. 先看 [首次启动](getting-started/first-run.md)，确认你已经能打开本地 UI。
+    2. 再看 [界面导览](guides/ui-tour.md)，先认清每个区域是干什么的。
+    3. 然后看 [添加账户](guides/add-account.md)，优先接测试网账户。
+    4. 接着看 [手动交易](guides/manual-trading.md)，跑通一次最小交易流程。
+    5. 最后再看 [AI 与自动化](guides/ai-automation.md)。
 
 ## 这套系统能做什么
 
-- 在本机或同一局域网内打开统一交易界面。
-- 接入 `OKX`、`Binance`、`Bybit`、`Bitget`、`Gate.io`。
-- 同时支持 `spot` 和 `swap` 两类资产场景。
-- 支持保存账户后使用 `account_id` 调用，也支持直接传入 `api_key`、`secret_key`、`passphrase`。
-- 通过 `testnet=true` 将请求路由到支持的测试网或模拟盘环境。
+- 在本机浏览器里打开统一交易界面。
+- 在同一页面里切换交易所、市场类型、交易对和周期。
+- 通过账户管理窗口统一接入 `OKX`、`Binance`、`Bybit`、`Bitget`、`Gate.io`。
+- 在右侧下单区执行手动交易、设置 TP / SL，并用底部标签查看持仓、挂单、历史和资产。
+- 通过顶部 `AI` 和底部 `自动做单` 入口使用模型分析和自动化任务。
 
 ## 快速事实
 
@@ -36,7 +42,7 @@ Signal Horse 是一个本地优先的加密交易工作台。它把本地浏览�
 
 ## 文档范围
 
-这套文档聚焦于“怎么安装、怎么启动、怎么配置账户、怎么使用 UI、怎么调用本地 API”。
+这套文档聚焦于“怎么打开本地 UI、怎么理解界面、怎么配置账户、怎么手动交易、怎么使用 AI 和自动化”。
 
 它不覆盖：
 
@@ -44,25 +50,24 @@ Signal Horse 是一个本地优先的加密交易工作台。它把本地浏览�
 - Windows / macOS / Linux 打包脚本内部实现。
 - 站点后台、分析面板或管理侧逻辑。
 
-如果你需要对接接口字段，请直接跳到 [API 附录](reference/api.md)。
+如果你只是普通使用者，可以先跳过 API。只有在你要做脚本联调、二次开发或 AI 工具接入时，再看 [API 附录（高级）](reference/api.md)。
 
 ## 文档地图
 
 如果你是普通使用者，建议按这条路径阅读：
 
-1. [安装部署](getting-started/installation.md)
-2. [首次启动](getting-started/first-run.md)
-3. [界面导览](guides/ui-tour.md)
-4. [添加账户](guides/add-account.md)
-5. [手动交易](guides/manual-trading.md)
-6. [AI 与自动化](guides/ai-automation.md)
-7. [更新与维护](guides/update-maintenance.md)
+1. [首次启动](getting-started/first-run.md)
+2. [界面导览](guides/ui-tour.md)
+3. [添加账户](guides/add-account.md)
+4. [手动交易](guides/manual-trading.md)
+5. [AI 与自动化](guides/ai-automation.md)
+6. [更新与维护](guides/update-maintenance.md)
+7. [API 附录（高级）](reference/api.md)
 
 ## 当前手册已经覆盖的主题
 
-- 安装和首启路径
-- UI 主界面导览
-- 账户接入和测试网使用
-- 手动下单、TP/SL 与清理动作
-- AI 分析和 Bot 自动化
-- 常见问题与本地 API 附录
+- 主界面区域和基本操作入口
+- 账户管理、测试网与连通性验证
+- 手动下单、TP / SL、批量清理和结果核对
+- AI 模型管理、AI 分析和自动做单入口
+- 更新维护和高级 API 附录
