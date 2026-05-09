@@ -54,6 +54,8 @@ nav:
       - 顶部状态栏: guides/top-bar.md
       - 市场与交易对侧栏: guides/market-sidebar.md
       - 图表与周期工具: guides/chart-workspace.md
+      - 右下角 AI 分析: guides/ai-chart-analysis.md
+      - 一键自动做单: guides/auto-trade-launcher.md
       - 持仓页: guides/positions-tab.md
       - 挂单页: guides/open-orders-tab.md
       - 历史委托页: guides/order-history-tab.md

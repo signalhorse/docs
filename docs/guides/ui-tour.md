@@ -21,6 +21,8 @@
 - [顶部状态栏](top-bar.md)
 - [市场与交易对侧栏](market-sidebar.md)
 - [图表与周期工具](chart-workspace.md)
+- [右下角 AI 分析](ai-chart-analysis.md)
+- [一键自动做单](auto-trade-launcher.md)
 - [持仓页](positions-tab.md)
 - [挂单页](open-orders-tab.md)
 - [历史委托页](order-history-tab.md)
