@@ -33,13 +33,13 @@ plugins:
           name: 简体中文
           default: true
           build: true
-          link: /docs/
+          link: /
           theme:
             language: zh
         - locale: en
           name: English
           build: true
-          link: /docs/en/
+          link: /en/
           site_name: Signal Horse User Manual
           site_description: User guide for the Signal Horse local-first trading workstation
           theme:
