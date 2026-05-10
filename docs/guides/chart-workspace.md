@@ -1,38 +1,38 @@
-# 图表与周期工具
+# Chart and Timeframe Tools
 
-中央区域是你做判断的地方。这里主要负责看行情、切周期、开指标，以及从图表发起 AI 分析。
+The center area is where you make trading judgments. It is mainly responsible for viewing the market, switching timeframes, enabling indicators, and launching AI analysis from the chart.
 
-![图表与周期工具](../assets/ui/chart-workspace.png)
+![Chart and timeframe tools](../assets/ui/en/chart-workspace.png)
 
-## 这一块包含什么
+## What this area contains
 
-- 当前 symbol 标题。
-- 周期按钮，例如 `1m`、`15m`、`1h`、`4h`、`1d`。
-- 指标、时区、设置、截屏、全屏工具。
-- 主图和成交量区域。
-- 右下角 AI 快捷入口。
+- The current symbol title.
+- Timeframe buttons such as `1m`, `15m`, `1h`, `4h`, and `1d`.
+- Indicators, timezone, settings, screenshot, and fullscreen tools.
+- The main chart and volume area.
+- The bottom-right AI quick entry.
 
-## 新手第一次怎么用
+## How beginners should use it the first time
 
-1. 先确认左侧交易所、市场类型和交易对已经选对。
-2. 把周期切到你最熟悉的时间框架，例如 `15m` 或 `1h`。
-3. 观察主图和成交量是否都正常刷新。
-4. 需要时再打开指标或 AI 分析。
+1. First confirm that the exchange, market type, and symbol in the left area are correct.
+2. Switch to the timeframe you know best, such as `15m` or `1h`.
+3. Check whether both the main chart and the volume area are updating normally.
+4. Open indicators or AI analysis only when needed.
 
-## 这里最常用的功能
+## The most common functions here
 
-- 切换周期，看短线和中线结构是否一致。
-- 打开指标，辅助观察趋势和量能。
-- 用截屏按钮保存当前图表证据。
-- 用全屏模式临时放大图表。
-- 用右下角 AI 快捷入口对当前 symbol 发起分析。
+- Switch timeframes to compare short-term and mid-term structure.
+- Enable indicators to assist with trend and volume analysis.
+- Save evidence of the current chart using the screenshot button.
+- Temporarily enlarge the chart with fullscreen mode.
+- Launch AI analysis for the current symbol from the bottom-right quick entry.
 
-如果你要专门学习右下角这组按钮和结果卡片，直接看 [右下角 AI 分析](ai-chart-analysis.md)；如果你要看结果卡片点下去之后怎么进入下单窗口，直接看 [AI 快捷下单窗口](ai-quick-order.md)；如果你要从这里启动自动化任务，直接看 [一键自动做单](auto-trade-launcher.md)。
+If you want to study the bottom-right button group and result card in detail, go directly to [Bottom-Right AI Analysis](ai-chart-analysis.md). If you want to see how the result card leads into the order modal, go directly to [AI Quick Order Modal](ai-quick-order.md). If you want to start automation from here, go directly to [One-Click Auto Trade](auto-trade-launcher.md).
 
-## 使用建议
+## Usage suggestions
 
-- 先把图表当成判断入口，再去右侧下单。
-- 先确认周期，再看 AI 建议，不要让 AI 反过来替你决定周期。
-- 图表里看到的价格环境，最终还是要和底部历史记录一起核对。
+- Use the chart as your judgment entry point before you move to the right-side order panel.
+- Confirm the timeframe first, then review AI suggestions. Do not let AI decide the timeframe for you.
+- The price environment you see in the chart should always be cross-checked against the bottom history tabs.
 
-下一步建议看 [右侧下单面板](order-panel.md) 或 [AI 模型窗口](ai-model-center.md)。
+Next, continue with [Right Order Panel](order-panel.md) or [AI Model Center](ai-model-center.md).

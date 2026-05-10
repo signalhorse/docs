@@ -1,31 +1,31 @@
-# 历史委托页
+# Order History Tab
 
-`历史委托` 页是“执行证据页”。它用来回答的是：订单到底有没有真正发出去，以及最后是以什么状态结束的。
+The `Order History` tab is the execution evidence page. It answers this question: did the order really go through the system, and what final state did it end up in?
 
-![历史委托页](../assets/ui/order-history-panel.png)
+![Order history tab](../assets/ui/en/order-history-panel.png)
 
-## 这一页会显示什么
+## What this tab shows
 
-- 已提交过的历史订单记录。
-- 订单方向、价格、数量、状态、时间。
-- 不同交易所返回的历史明细。
+- Historical orders that were submitted.
+- Order side, price, quantity, status, and time.
+- Exchange-specific history details.
 
-## 为什么这页很重要
+## Why this tab matters
 
-- 按钮提示只能说明 UI 收到了响应。
-- 真正能说明“订单进过系统”的，通常还是历史委托记录。
-- 当你怀疑一笔单没有下成功时，这里比主观感觉更可靠。
+- A button message only proves that the UI received some response.
+- Order history is usually what proves that the order really entered the system.
+- When you suspect that an order did not succeed, this page is more reliable than intuition.
 
-## 推荐使用方式
+## Recommended usage
 
-1. 下单后先看持仓或挂单。
-2. 如果结果和预期不一致，再立刻看历史委托。
-3. 用这里的时间、价格、方向回对你刚才的操作。
+1. After placing an order, check positions or open orders first.
+2. If the result does not match what you expected, go to order history immediately.
+3. Reconcile the time, price, and side here against the action you just performed.
 
-## 这页最适合排查什么
+## What this tab is best for troubleshooting
 
-- 明明点了下单，但仓位没出现。
-- 条件单好像没有按预期触发。
-- 一笔单是否已经成交、撤销或被拒绝。
+- You clicked the order button, but no position appeared.
+- A trigger order did not behave the way you expected.
+- Whether an order was filled, canceled, or rejected.
 
-下一步建议看 [历史持仓页](position-history-tab.md) 或 [手动交易](manual-trading.md)。
+Next, continue with [Position History Tab](position-history-tab.md) or [Manual Trading](manual-trading.md).

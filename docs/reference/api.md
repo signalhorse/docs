@@ -1,121 +1,121 @@
-# API 附录
+# API Appendix
 
-这一章放在手册最后，面向集成方和高级使用者。普通用户如果只是通过 UI 使用 Signal Horse，可以先跳过本页。
+This chapter is placed at the end of the handbook for integrators and advanced users. If you are only using Signal Horse through the UI, you can skip this page at first.
 
-如果你已经熟悉了界面操作，又准备做脚本联调、二次开发或外部 AI 工具接入，再继续看下面的接口说明。
+If you are already comfortable with the interface and want to do script integration, secondary development, or external AI tool integration, continue with the API notes below.
 
-## 基本地址
+## Base address
 
-默认本地地址：
+Default local address:
 
 ```text
 http://127.0.0.1:38182
 ```
 
-常用入口：
+Common entry points:
 
-- `GET /`：当前可作为 UI 入口，也兼容健康别名。
-- `GET /health`：服务健康检查。
+- `GET /`: currently acts as the UI entry and also as a health alias.
+- `GET /health`: service health check.
 
-## 认证与账户模型
+## Authentication and account model
 
-写请求和私有读请求通常有两种方式：
+Write requests and private read requests usually work in one of two ways:
 
-1. 传 `account_id`
-2. 直接传 `api_key`、`secret_key`、`passphrase`
+1. Pass `account_id`
+2. Pass `api_key`, `secret_key`, and `passphrase` directly
 
-### 当前常用字段
+### Common fields
 
-| 字段 | 含义 |
+| Field | Meaning |
 | --- | --- |
 | `exchange` | `okx` / `binance` / `bitget` / `gate` / `bybit` |
-| `asset_type` | `spot` 或 `swap` |
-| `symbol` | 例如 `BTCUSDT` 或 `BTC/USDT` |
-| `testnet` | `true` 走测试网，省略或 `false` 走实盘 |
-| `account_id` | 使用已保存账户 |
-| `api_key` | 直接传 API Key |
-| `secret_key` | 直接传 Secret |
-| `passphrase` | OKX / Bitget 需要 |
+| `asset_type` | `spot` or `swap` |
+| `symbol` | Such as `BTCUSDT` or `BTC/USDT` |
+| `testnet` | `true` uses testnet; omitted or `false` uses live |
+| `account_id` | Use a previously saved account |
+| `api_key` | Pass API key directly |
+| `secret_key` | Pass secret directly |
+| `passphrase` | Required by OKX / Bitget |
 
-## 端点分组
+## Endpoint groups
 
-### 服务与健康
+### Service and health
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/` | 当前同时承担 UI 入口和健康别名 |
-| GET | `/health` | 服务是否可用 |
+| GET | `/` | Currently serves both as the UI entry and a health alias |
+| GET | `/health` | Whether the service is available |
 
-### 私有读接口
+### Private read APIs
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/positions` | 读取合约持仓 |
-| GET | `/balances` | 读取余额 |
-| GET | `/orders-history` | 读取历史订单 |
-| GET | `/positions-history` | 读取历史仓位 |
-| GET | `/open-orders` | 当前挂单 |
-| GET | `/open-tpsl-orders` | 当前 TP / SL 订单 |
+| GET | `/positions` | Read swap positions |
+| GET | `/balances` | Read balances |
+| GET | `/orders-history` | Read historical orders |
+| GET | `/positions-history` | Read historical positions |
+| GET | `/open-orders` | Read current open orders |
+| GET | `/open-tpsl-orders` | Read current TP / SL orders |
 
-### 交易写接口
+### Trading write APIs
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/place-order` | 下单主入口 |
-| POST | `/order` | 旧别名，兼容保留 |
-| POST | `/cancel-order` | 撤销普通订单 |
-| POST | `/close-all` | 平仓 / 清仓 |
-| POST | `/set-leverage` | 设置杠杆 |
-| POST | `/set-margin-mode` | 设置保证金模式 |
-| POST | `/set-tpsl` | 设置 TP / SL |
-| POST | `/cancel-tpsl` | 取消 TP / SL |
+| POST | `/place-order` | Main order placement entry |
+| POST | `/order` | Legacy alias kept for compatibility |
+| POST | `/cancel-order` | Cancel a normal order |
+| POST | `/close-all` | Close positions / liquidate holdings |
+| POST | `/set-leverage` | Set leverage |
+| POST | `/set-margin-mode` | Set margin mode |
+| POST | `/set-tpsl` | Set TP / SL |
+| POST | `/cancel-tpsl` | Cancel TP / SL |
 
-### 账户与本地设置
+### Accounts and local settings
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/accounts` | 列出本地已保存账户 |
-| POST | `/accounts` | 保存账户 |
-| PUT | `/accounts/:id` | 更新账户 |
-| DELETE | `/accounts/:id` | 删除账户 |
-| POST | `/accounts/test` | 测试凭据但不保存 |
-| GET | `/accounts/:id/test` | 测试已保存账户 |
-| GET | `/settings/ai` | 读取 AI 设置 |
-| POST | `/settings/ai` | 保存 AI 设置 |
+| GET | `/accounts` | List locally saved accounts |
+| POST | `/accounts` | Save an account |
+| PUT | `/accounts/:id` | Update an account |
+| DELETE | `/accounts/:id` | Delete an account |
+| POST | `/accounts/test` | Test credentials without saving |
+| GET | `/accounts/:id/test` | Test a saved account |
+| GET | `/settings/ai` | Read AI settings |
+| POST | `/settings/ai` | Save AI settings |
 
-### 公共市场数据
+### Public market data
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/market/symbols` | 可交易 symbol 列表 |
-| GET | `/market/ticker` | 单个 symbol 行情 |
-| GET | `/market/tickers` | 批量 ticker |
-| GET | `/market/klines` | K 线数据 |
-| WS | `/ws/klines` | 实时 K 线代理 |
+| GET | `/market/symbols` | Tradable symbol list |
+| GET | `/market/ticker` | One symbol ticker |
+| GET | `/market/tickers` | Batch ticker endpoint |
+| GET | `/market/klines` | Kline data |
+| WS | `/ws/klines` | Real-time kline proxy |
 
-### AI 代理
+### AI proxy
 
-| 方法 | 端点 | 说明 |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/ai/proxy` | 把聊天补全请求代理到配置好的 AI 提供方 |
+| POST | `/ai/proxy` | Proxy a chat completion request to the configured AI provider |
 
-## 示例：健康检查
+## Example: health check
 
 ```bash
 curl -fsS http://127.0.0.1:38182/health
 ```
 
-## 示例：读取余额
+## Example: read balances
 
-如果你使用保存后的账户，可以优先使用 `account_id` 风格。
+If you use a saved account, prefer the `account_id` style.
 
 ```text
 GET /balances?exchange=bybit&account_id=<saved-account-id>&testnet=true
 ```
 
-如果你只是临时联调，也可以直接传凭据，但更适合在本机安全环境中使用。
+If you are only doing temporary integration testing, you can pass credentials directly, but that is better kept to a trusted local environment.
 
-## 示例：下市价单
+## Example: place a market order
 
 ```bash
 curl -X POST http://127.0.0.1:38182/place-order \
@@ -135,26 +135,26 @@ curl -X POST http://127.0.0.1:38182/place-order \
   }'
 ```
 
-### 下单字段说明
+### Order field notes
 
-| 字段 | 是否常用 | 说明 |
+| Field | Common? | Description |
 | --- | --- | --- |
-| `symbol` | 是 | 交易对 |
-| `asset_type` | 是 | `spot` 或 `swap` |
-| `side` | 是 | `buy` 或 `sell` |
-| `quantity` | 是 | 下单数量 |
-| `quantity_unit` | 推荐 | 合约场景建议显式用 `base` 表示币数量 |
-| `leverage` | 合约常用 | 默认 `1` |
-| `margin_mode` | 合约可选 | `cross` / `isolated` |
-| `position_side` | 对冲模式常用 | `long` / `short` |
-| `action` | 合约常用 | `open` / `close` |
-| `order_type` | 常用 | `market` / `limit` |
-| `price` | 限价单必填 | 限价价格 |
-| `trigger_price` | 条件单常用 | 触发价 |
-| `trigger_direction` | 条件单常用 | `above` / `below` |
-| `testnet` | 强烈推荐 | 先用测试网验证 |
+| `symbol` | Yes | Trading pair |
+| `asset_type` | Yes | `spot` or `swap` |
+| `side` | Yes | `buy` or `sell` |
+| `quantity` | Yes | Order quantity |
+| `quantity_unit` | Recommended | In swap workflows, explicitly using `base` is recommended for coin quantity |
+| `leverage` | Common for swaps | Defaults to `1` |
+| `margin_mode` | Optional for swaps | `cross` / `isolated` |
+| `position_side` | Common in hedge mode | `long` / `short` |
+| `action` | Common for swaps | `open` / `close` |
+| `order_type` | Common | `market` / `limit` |
+| `price` | Required for limit orders | Limit price |
+| `trigger_price` | Common for trigger orders | Trigger price |
+| `trigger_direction` | Common for trigger orders | `above` / `below` |
+| `testnet` | Strongly recommended | Validate on testnet first |
 
-## 示例：设置 TP / SL
+## Example: set TP / SL
 
 ```bash
 curl -X POST http://127.0.0.1:38182/set-tpsl \
@@ -173,24 +173,24 @@ curl -X POST http://127.0.0.1:38182/set-tpsl \
   }'
 ```
 
-### TP / SL 请求字段
+### TP / SL request fields
 
-| 字段 | 说明 |
+| Field | Description |
 | --- | --- |
-| `symbol` | 交易对 |
+| `symbol` | Trading pair |
 | `asset_type` | `spot` / `swap` |
-| `side` | 保护当前仓位所需的方向 |
-| `quantity` | 保护数量，可选 |
-| `take_profit_price` | 止盈触发价 |
-| `stop_loss_price` | 止损触发价 |
-| `position_side` | 对冲模式下指定 `long` 或 `short` |
-| `account_id` 或直接密钥 | 二选一 |
-| `testnet` | 是否走测试网 |
+| `side` | The protective side required for the current position |
+| `quantity` | Protected quantity, optional |
+| `take_profit_price` | Take-profit trigger price |
+| `stop_loss_price` | Stop-loss trigger price |
+| `position_side` | In hedge mode, specify `long` or `short` |
+| `account_id` or direct credentials | Choose one |
+| `testnet` | Whether to use testnet |
 
-## 集成建议
+## Integration suggestions
 
-!!! tip "本地接入的推荐方式"
-    1. 先调用 `/health`。
-    2. 再调用 `/balances`、`/positions`、`/orders-history` 做只读确认。
-    3. 再执行 `/place-order`、`/set-tpsl` 等写接口。
-    4. 能用 `account_id` 就尽量不要每次都重复传密钥。
+!!! tip "Recommended local integration order"
+    1. Call `/health` first.
+    2. Then call `/balances`, `/positions`, and `/orders-history` for read-only confirmation.
+    3. Only after that should you use write endpoints such as `/place-order` and `/set-tpsl`.
+    4. When possible, use `account_id` instead of repeatedly sending raw credentials.

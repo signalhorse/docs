@@ -1,34 +1,34 @@
-# 顶部状态栏
+# Top Status Bar
 
-顶部状态栏负责回答两个问题：你当前在看什么，以及本地执行器当前是不是可用。
+The top status bar answers two questions: what you are currently looking at, and whether the local executor is currently reachable.
 
-![顶部状态栏](../assets/ui/topbar.png)
+![Top status bar](../assets/ui/en/topbar.png)
 
-## 这一栏包含什么
+## What this bar contains
 
-- 产品标识 `Signal Horse`。
-- 当前交易对、最新价格、24 小时涨跌幅、高低点。
-- `AI` 按钮，用来打开 AI 模型管理窗口。
-- 语言切换按钮。
-- `账户` 按钮，用来打开账户管理窗口。
-- 右侧在线状态，用来判断本地执行器是否在线。
+- The product identifier `Signal Horse`.
+- The current symbol, latest price, 24-hour change, and daily high / low.
+- The `AI` button, which opens the AI model management window.
+- The language switch button.
+- The `Accounts` button, which opens the account management window.
+- The online status indicator on the right, which tells you whether the local executor is reachable.
 
-## 第一次打开时先看哪 3 件事
+## The first 3 things to check when you open the UI
 
-1. 右侧状态是不是在线。
-2. `账户` 按钮旁边有没有账户数量。
-3. 当前交易对是不是你要看的标的。
+1. Whether the right-side status is online.
+2. Whether there is an account count next to the `Accounts` button.
+3. Whether the current symbol is actually the market you intended to inspect.
 
-## 这里最常用的动作
+## The most common actions here
 
-- 点 `AI` 进入模型配置与连接测试。
-- 点 `账户` 查看已保存账户、添加账户、批量测试账户。
-- 切换语言，确认界面文本是否更适合你的使用习惯。
+- Click `AI` to open model configuration and connection testing.
+- Click `Accounts` to review saved accounts, add accounts, or batch-test them.
+- Switch the language if another UI language is easier for you to use.
 
-## 容易误解的点
+## Easy misunderstandings
 
-- 顶部栏不会替你切换 `spot / swap`，这个动作在左侧侧栏里。
-- 顶部栏显示的交易对只是当前页面上下文，不代表右侧已经选好账户。
-- 右上角在线只代表本地执行器可访问，不代表交易所一定可下单。
+- The top bar does not switch `spot / swap` for you. That happens in the left sidebar.
+- The symbol shown in the top bar is only the current page context. It does not mean the right panel has already selected the correct account.
+- The online status in the top-right corner only means the local executor is reachable. It does not mean the exchange is guaranteed to accept orders.
 
-下一步建议看 [市场与交易对侧栏](market-sidebar.md) 或 [账户管理窗口](account-center.md)。
+Next, continue with [Markets and Symbols Sidebar](market-sidebar.md) or [Account Center](account-center.md).

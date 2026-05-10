@@ -31,15 +31,15 @@ plugins:
       languages:
         - locale: zh
           name: 简体中文
-          default: true
           build: true
-          link: /
+          link: /zh/
           theme:
             language: zh
         - locale: en
           name: English
+          default: true
           build: true
-          link: /en/
+          link: /
           site_name: Signal Horse User Manual
           site_description: User guide for the Signal Horse local-first trading workstation
           theme:

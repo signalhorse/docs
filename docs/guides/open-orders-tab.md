@@ -1,32 +1,32 @@
-# 挂单页
+# Open Orders Tab
 
-`挂单` 页用来确认当前还没完成的订单和条件单。只要你用了限价单、条件单或 TP / SL，这一页就值得立刻检查。
+The `Open Orders` tab is used to confirm orders and trigger orders that are still active. Whenever you use a limit order, trigger order, or TP / SL, this page is worth checking immediately.
 
-![挂单页](../assets/ui/open-orders-panel.png)
+![Open orders tab](../assets/ui/en/open-orders-panel.png)
 
-## 这一页会显示什么
+## What this tab shows
 
-- 当前仍然有效的未成交订单。
-- 某些交易所返回的 TP / SL 条件单。
-- 每笔记录的币对、类型、方向、价格、数量、时间。
-- 每行自带的 `取消` 按钮。
+- Orders that are still active and unfilled.
+- TP / SL trigger orders returned by some exchanges.
+- The symbol, type, side, price, quantity, and time for each record.
+- A per-row `Cancel` button.
 
-## 这页最适合回答什么问题
+## The questions this tab answers best
 
-- 我的订单是不是已经挂出去。
-- 我的 TP / SL 有没有在交易所侧生效。
-- 我现在还有哪些单没有成交、需要取消或重挂。
+- Has my order actually been placed on the exchange?
+- Has my TP / SL really become active on the exchange side?
+- Which orders are still pending and need cancellation or re-submission?
 
-## 典型使用场景
+## Typical use cases
 
-1. 你刚提了限价单。
-2. 你刚提了条件触发单。
-3. 你刚给持仓设置了 TP / SL。
-4. 你准备做一键撤单前，先确认到底有哪些单还在场上。
+1. You just submitted a limit order.
+2. You just submitted a trigger order.
+3. You just set TP / SL on a position.
+4. You are about to perform a one-click cancel and want to confirm what is still active first.
 
-## 读这页时要注意
+## What to watch when reading this tab
 
-- 某些交易所会把 TP / SL 也放进挂单列表里，所以不要只看“类型”文字，要连同价格和方向一起看。
-- 如果你明明下了限价单，这里却没有，下一步去看 [历史委托页](order-history-tab.md) 确认是不是已成交或已被拒绝。
+- Some exchanges also place TP / SL entries into the open-orders list, so do not rely on the type text alone. Read price and side together.
+- If you know you submitted a limit order but it is not here, the next step is [Order History Tab](order-history-tab.md) to confirm whether it was already filled or rejected.
 
-下一步建议看 [历史委托页](order-history-tab.md) 或 [右侧下单面板](order-panel.md)。
+Next, continue with [Order History Tab](order-history-tab.md) or [Right Order Panel](order-panel.md).

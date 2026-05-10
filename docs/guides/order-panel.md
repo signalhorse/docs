@@ -1,47 +1,47 @@
-# 右侧下单面板
+# Right Order Panel
 
-右侧下单面板是整个 UI 里最需要谨慎操作的区域。它负责真正发单，也负责批量清理。
+The right order panel is the area in the entire UI where you need to operate most carefully. It is responsible for real order submission, and it also holds the batch cleanup tools.
 
-![右侧下单面板](../assets/ui/order-panel.png)
+![Right order panel](../assets/ui/en/order-panel.png)
 
-## 这个面板包含什么
+## What this panel contains
 
-- 账户选择器，支持多选账户。
-- `开仓 / 平仓` 切换。
-- `做多 / 做空` 或现货买卖方向切换。
-- `市价 / 限价 / 条件单` 类型切换。
-- 价格、触发价、数量、杠杆、保证金模式。
-- `TP / SL` 开关。
-- 下单按钮。
-- 刷新数据按钮。
-- 底部批量工具，例如一键平仓、一键取消未成交订单。
+- An account selector with multi-account support.
+- `Open / Close` switching.
+- `Long / Short` switching, or buy/sell direction in spot mode.
+- `Market / Limit / Trigger` order type switching.
+- Price, trigger price, quantity, leverage, and margin mode fields.
+- A `TP / SL` toggle.
+- The order submission button.
+- A refresh data button.
+- Bottom batch tools, such as one-click close and one-click cancel for open orders.
 
-## 第一次使用推荐顺序
+## Recommended first-time order of use
 
-1. 先确认左侧已经选对交易所、市场类型和交易对。
-2. 在这里选中测试网账户。
-3. 选择 `开仓` 还是 `平仓`。
-4. 选择方向。
-5. 选择订单类型。
-6. 输入数量，必要时再设置杠杆和保证金模式。
-7. 需要保护时打开 `TP / SL`。
-8. 点击执行后，立刻去底部持仓、挂单和历史页核对结果。
+1. First confirm that the exchange, market type, and symbol on the left side are already correct.
+2. Select a testnet account here.
+3. Choose whether you are `opening` or `closing`.
+4. Choose the direction.
+5. Choose the order type.
+6. Enter quantity, and only then set leverage and margin mode if needed.
+7. Enable `TP / SL` when protection is required.
+8. After submission, immediately verify the result from the bottom positions, orders, and history tabs.
 
-## 这块最容易出错的地方
+## The easiest mistakes in this area
 
-- 忘了看当前选中的账户芯片。
-- 把 `开仓` 和 `平仓` 选反。
-- 把 `做多` 和 `做空` 方向选反。
-- 在错误的市场类型下尝试用不适用的订单类型。
-- 没理解数量当前是按标的币数量输入。
+- Forgetting to check the currently selected account chips.
+- Reversing `Open` and `Close`.
+- Reversing `Long` and `Short`.
+- Trying to use an order type that does not fit the current market type.
+- Not understanding that quantity is currently entered in base-asset units.
 
-## 批量工具什么时候用
+## When to use the batch tools
 
-- 多账户一起清理风险时。
-- 需要快速平掉全部当前仓位时。
-- 需要统一取消所有未成交订单时。
+- When cleaning up risk across multiple accounts at once.
+- When you need to close all current positions quickly.
+- When you need to cancel all currently open orders in one pass.
 
-!!! warning "批量工具默认影响范围更大"
-    执行前一定回看当前选中账户。这里的失误，通常比单笔下单的失误影响更大。
+!!! warning "Batch tools usually have a wider blast radius"
+    Always re-check the currently selected accounts before you execute. Mistakes here usually have a larger impact than mistakes on a single order.
 
-下一步建议看 [持仓页](positions-tab.md)、[挂单页](open-orders-tab.md) 和 [手动交易](manual-trading.md)。
+Next, continue with [Positions Tab](positions-tab.md), [Open Orders Tab](open-orders-tab.md), and [Manual Trading](manual-trading.md).

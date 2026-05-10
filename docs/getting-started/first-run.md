@@ -1,8 +1,8 @@
-# 首次启动
+# First Run
 
-这一章的目标不是“先下单”，而是先确认本地服务确实已经正常运行，页面、接口、账户和测试网链路都通。
+The goal of this chapter is not to place an order immediately. It is to confirm that the local service, page, API, accounts, and testnet connectivity all work first.
 
-## 1. 确认服务健康
+## 1. Check service health
 
 === "PowerShell"
 
@@ -16,52 +16,52 @@
     curl -fsS http://127.0.0.1:38182/health
     ```
 
-期望结果是返回 `status: ok` 的 JSON。
+The expected result is JSON that includes `status: ok`.
 
-## 2. 打开本地 UI
+## 2. Open the local UI
 
-在浏览器访问：
+Open this URL in a browser:
 
 ```text
 http://127.0.0.1:38182/
 ```
 
-当前项目约定里，根路径 `/` 是本地交易界面的主入口。`/health` 则用于服务可用性检查。
+Under the current project behavior, the root path `/` is the main local trading UI entry point. `/health` is used for service availability checks.
 
-## 3. 检查你处在什么运行方式
+## 3. Check which runtime mode you are using
 
-常见有两种：
+The two common modes are:
 
-- Windows 便携包：通过 `Start Signal Executor.cmd` 启动。
-- 安装脚本部署：通过本地服务命令管理。
+- Windows portable package: started with `Start Signal Executor.cmd`.
+- Installer-based deployment: managed through local service commands.
 
-## 4. 做第一次只读验证
+## 4. Do a first read-only verification
 
-在真正交易前，先验证三类只读信息：
+Before you trade, verify three categories of read-only data first:
 
-1. 余额是否能读取。
-2. 持仓是否能读取。
-3. 历史订单或历史仓位是否能返回。
+1. Whether balances can be read.
+2. Whether positions can be read.
+3. Whether order history or position history can be returned.
 
-这样做的原因很简单：如果账户权限、测试网环境、交易所类型、符号格式有任何一个不对，最先暴露问题的通常不是下单成功率，而是读取接口。
+The reason is simple: if account permissions, testnet settings, exchange type, or symbol formatting are wrong, read APIs usually expose the problem earlier than order placement does.
 
-## 5. 远程访问时处理网络
+## 5. Handle networking for remote access
 
-如果你要从另一台设备访问当前机器上的 UI：
+If you want to access the UI from another device:
 
-- Linux 需要放行 `38182` 端口。
-- 云服务器需要同时检查安全组和系统防火墙。
-- Windows 桌面默认更适合本机浏览器访问。
+- On Linux, allow port `38182`.
+- On cloud servers, check both the security group and the system firewall.
+- On Windows desktop, local browser access is still the default and simpler choice.
 
-远程访问地址示例：
+Example remote access URL:
 
 ```text
 http://<server-ip>:38182/
 ```
 
-## 6. 常用服务命令
+## 6. Common service commands
 
-安装脚本模式下，常用命令通常是：
+In installer-based setups, the common commands are usually:
 
 ```bash
 signal-executor service status
@@ -69,16 +69,16 @@ signal-executor service restart
 signal-executor service uninstall
 ```
 
-如果命令不在 PATH 里，Linux / macOS 用户可能需要直接使用安装到用户目录下的可执行文件。
+If the command is not in PATH, Linux and macOS users may need to call the executable directly from the install directory under their user environment.
 
-## 7. 推荐的第一次运行顺序
+## 7. Recommended first-run sequence
 
-!!! tip "安全顺序"
-    1. 先确认 `/health` 正常。
-    2. 再打开 UI。
-    3. 先添加测试网账户。
-    4. 先验证只读接口。
-    5. 再做一笔最小规模的测试单。
-    6. 最后才切换到实盘。
+!!! tip "Safe order of operations"
+    1. Confirm that `/health` works.
+    2. Then open the UI.
+    3. Add a testnet account first.
+    4. Verify read-only APIs first.
+    5. Then place one minimal test order.
+    6. Only switch to live trading after that.
 
-下一步请继续看 [添加账户](../guides/add-account.md)。
+Next, continue with [Add Accounts](../guides/add-account.md).

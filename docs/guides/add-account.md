@@ -1,87 +1,87 @@
-# 添加账户
+# Add Accounts
 
-这一页只讲一件事：怎么在 UI 里把账户接进来，并确认它能正常读余额、读持仓和执行测试。
+This page focuses on one thing only: how to connect an account through the UI and confirm that it can read balances, read positions, and pass a connection test.
 
-![账户管理窗口](../assets/ui/account-modal.png)
+![Account center](../assets/ui/en/account-modal.png)
 
-## 从哪里进入
+## Where to enter this flow
 
-1. 打开本地 UI。
-2. 点击顶部右侧的 `账户` 按钮。
-3. 在账户管理窗口中点击 `添加账户`。
+1. Open the local UI.
+2. Click the `Accounts` button in the top-right area.
+3. In the account management window, click `Add Account`.
 
-如果你想先认识这个窗口里每个按钮和字段分别是干什么的，先看 [账户管理窗口](account-center.md)。
+If you want a field-by-field explanation of the buttons and form in that window, read [Account Center](account-center.md) first.
 
-如果你只是第一次试用，先只添加一个测试网账户就够了。
+If this is your first trial, adding just one testnet account is enough.
 
-## 支持的交易所与字段差异
+## Supported exchanges and field differences
 
-| 交易所 | 是否需要 `passphrase` | 说明 |
+| Exchange | Requires `passphrase` | Notes |
 | --- | --- | --- |
-| OKX | 是 | 建议先用模拟盘验证联通性 |
-| Binance | 否 | 现货测试网和合约测试网是不同体系 |
-| Bybit | 否 | 支持 demo / testnet |
-| Bitget | 是 | 当前更适合使用 UTA 账户 |
-| Gate.io | 否 | 现货和合约余额池表现可能共享 |
+| OKX | Yes | It is best to validate connectivity in simulated trading first |
+| Binance | No | Spot testnet and futures testnet are separate systems |
+| Bybit | No | Demo / testnet is supported |
+| Bitget | Yes | UTA accounts are the better fit at the moment |
+| Gate.io | No | Spot and swap balances may behave like they share a pool |
 
-## 创建 API Key 前的建议
+## Recommendations before creating API keys
 
-- 不要开启提现权限。
-- 先只给最小可用交易权限。
-- 首次接入优先使用测试网或模拟盘。
-- 如果交易所对现货和合约使用不同测试网凭据，不要混用。
+- Do not enable withdrawal permission.
+- Grant only the minimum trading permissions needed.
+- Prefer testnet or demo environments for the first connection.
+- If an exchange uses different test credentials for spot and swap, do not mix them.
 
-## 在 UI 里添加账户
+## Adding an account in the UI
 
-推荐流程：
+Recommended flow:
 
-1. 进入本地 UI。
-2. 点击顶部 `账户`。
-3. 在弹窗里点击 `添加账户`。
-4. 选择交易所。
-5. 填写 `API Key` 和 `Secret Key`。
-6. 对 `OKX` 或 `Bitget` 再填写 `Passphrase`。
-7. 选择当前账户是主网还是测试网。
-8. 保存后，先做一次测试连接。
+1. Enter the local UI.
+2. Click `Accounts` at the top.
+3. Click `Add Account` in the modal.
+4. Select the exchange.
+5. Fill in `API Key` and `Secret Key`.
+6. For `OKX` or `Bitget`, also fill in `Passphrase`.
+7. Choose whether the account is live or testnet.
+8. After saving, run a connection test first.
 
-## 添加后先看什么
+## What to check immediately after adding it
 
-保存后不要马上下单。先检查这三件事：
+Do not place an order immediately after saving. Check these three things first:
 
-1. 账户标签是不是主网 / 测试网正确。
-2. 余额页能不能正常读取。
-3. 持仓、历史委托或历史持仓能不能返回数据。
+1. Whether the account label correctly shows live or testnet.
+2. Whether the balances page can read data.
+3. Whether positions, order history, or position history can return data.
 
-如果这三步都正常，再去手动交易。
+If all three are normal, proceed to manual trading.
 
-## 批量测试全部账户
+## Batch testing all accounts
 
-账户窗口底部提供 `一键测试全部`，适合在这些场景使用：
+The account window provides a `Test All` action, which is useful in these situations:
 
-- 你刚导入了多家交易所账号。
-- 你不确定哪些是测试网、哪些是主网。
-- 你更新了某个 API Key 后，想统一复检一遍。
+- You just imported accounts from several exchanges.
+- You are not sure which ones are live and which ones are testnet.
+- You updated one API key and want to re-check everything together.
 
-建议在批量测试前，先确保这些账户的 API 权限本身正确。
+Before a batch test, make sure the API permissions of those accounts are themselves correct.
 
-## 测试网与实盘的切换原则
+## How to think about testnet versus live
 
-当前项目约定里：
+Under the current project conventions:
 
-- 标成 `测试网` 的账户，优先用于首轮验证和练习。
-- 标成 `主网` 的账户，只在你确认流程没问题后再使用。
+- Accounts marked as `testnet` should be used first for validation and practice.
+- Accounts marked as `live` should only be used after you have already confirmed the workflow.
 
-!!! warning "不要假设一套凭据能同时覆盖所有环境"
-    某些交易所会把现货测试网、合约测试网、实盘 API 分成不同凭据体系。只要读取接口报权限错误，先检查是不是环境和密钥不匹配。
+!!! warning "Do not assume one credential set covers every environment"
+    Some exchanges split spot testnet, swap testnet, and live API access into separate credential systems. Whenever a read API reports a permission error, check whether the environment and key actually match before assuming the product is wrong.
 
-## 添加账户后的检查清单
+## Checklist after adding an account
 
-添加完账户后，请至少做下面三件事：
+After adding an account, complete at least these three checks:
 
-1. 读取余额。
-2. 读取持仓。
-3. 读取历史订单或历史仓位。
+1. Read balances.
+2. Read positions.
+3. Read order history or position history.
 
-全部通过后，再进入 [手动交易](manual-trading.md)。
+Once all three succeed, continue to [Manual Trading](manual-trading.md).
 
-如果你后面需要脚本化调用保存后的账户，再去看 [API 附录（高级）](../reference/api.md)。
+If you later need scripted access to saved accounts, go to [API Appendix (Advanced)](../reference/api.md).

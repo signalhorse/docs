@@ -1,34 +1,34 @@
-# AI 模型窗口
+# AI Model Center
 
-AI 模型窗口是你配置模型来源、默认模型和连接测试的入口。它属于“配置中心”，不是“立即交易区”。
+The AI model window is the entry point for configuring model sources, the default model, and connection tests. It is a configuration center, not an immediate trading area.
 
-![AI 模型窗口](../assets/ui/ai-settings.png)
+![AI model center](../assets/ui/en/ai-settings.png)
 
-## 这个窗口通常做什么
+## What this window usually does
 
-- 新增模型配置。
-- 填写模型名称、Provider、API Base URL、API Key。
-- 设置默认模型。
-- 测试模型连接。
-- 保存系统提示词和模型参数。
+- Add model configurations.
+- Fill in the model name, provider, API base URL, and API key.
+- Set the default model.
+- Test model connectivity.
+- Save the system prompt and model parameters.
 
-## 推荐的配置顺序
+## Recommended configuration order
 
-1. 先添加一个模型配置。
-2. 先做连接测试。
-3. 确认可用后再设为默认模型。
-4. 最后才去图表区或自动做单页实际调用。
+1. Add one model configuration first.
+2. Run the connection test first.
+3. Only after it is confirmed usable should you set it as the default.
+4. After that, go to the chart area or the auto-trade pages for actual usage.
 
-## 什么时候回到这里
+## When to come back here
 
-- 你要新增另一个模型提供方时。
-- AI 分析失败，想先确认是不是模型连接问题时。
-- 你要切换默认模型时。
+- When you want to add another model provider.
+- When AI analysis fails and you want to confirm whether the issue is the model connection.
+- When you want to switch the default model.
 
-## 使用建议
+## Usage suggestions
 
-- 先把 AI 当成分析辅助，不要一上来就交给它直接管理真实资金。
-- 先在测试网和小资金场景里验证模型输出是否符合你的预期。
-- 模型能连通，不等于策略就一定可靠。
+- Treat AI as an analysis assistant first. Do not hand it direct control over real money immediately.
+- Validate the model output on testnet and with small capital first.
+- A model being reachable does not mean the strategy built on top of it is reliable.
 
-下一步建议看 [图表与周期工具](chart-workspace.md) 或 [AI 与自动化](ai-automation.md)。
+Next, continue with [Chart and Timeframe Tools](chart-workspace.md) or [AI and Automation](ai-automation.md).

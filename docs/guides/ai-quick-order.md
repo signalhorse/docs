@@ -1,73 +1,73 @@
-# AI 快捷下单窗口
+# AI Quick Order Modal
 
-这个窗口是 AI 结果卡片和真实下单之间的“确认层”。它的价值不是替你跳过判断，而是把 AI 已经推出来的方向和价格参考先填到表单里，让你少重复输入一遍。
+This modal is the confirmation layer between the AI result card and a real order submission. Its value is not to skip judgment for you, but to pre-fill the direction and price references that AI already inferred so you do not have to type everything again.
 
-![AI 快捷下单窗口](../assets/ui/ai-quick-order-modal.png)
+![AI quick order modal](../assets/ui/en/ai-quick-order-modal.png)
 
-## 这个窗口从哪里来
+## Where this modal comes from
 
-当你在 [右下角 AI 分析](ai-chart-analysis.md) 里拿到结果卡片后，点击底部的 `一键做多` 或 `一键做空`，就会打开这个窗口。
+When you receive a result card in [Bottom-Right AI Analysis](ai-chart-analysis.md), clicking `Quick Long` or `Quick Short` at the bottom opens this modal.
 
-- 如果 AI 判断偏多，窗口会默认切到 `做多`。
-- 如果 AI 判断偏空，窗口会默认切到 `做空`。
-- 如果你不同意 AI 给的方向，也可以在窗口顶部手动切换方向。
+- If AI is biased bullish, the modal defaults to `Long`.
+- If AI is biased bearish, the modal defaults to `Short`.
+- If you disagree with the AI direction, you can still switch it manually at the top of the modal.
 
-## 哪些内容会自动带进来
+## Which values are filled automatically
 
-这个窗口会优先替你填好这些内容：
+This modal will try to fill these values for you first:
 
-- 当前正在看的 `symbol` 和交易所。
-- AI 推断出来的方向。
-- 当前默认杠杆。
-- 根据支撑 / 压力推出来的 TP / SL 参考价。
-- 当前已经选中的账户；如果你之前没选账户，就先帮你勾上一个可用账户。
+- The current `symbol` and exchange.
+- The direction inferred by AI.
+- The current default leverage.
+- TP / SL reference prices derived from support and resistance.
+- The accounts that are currently selected; if none were selected before, one available account is selected for you.
 
-在当前实现里，方向一旦从 `做空` 切回 `做多`，TP / SL 也会跟着重新换位，而不是只改按钮颜色。
+In the current implementation, when you switch the side from `Short` back to `Long`, the TP / SL values are recalculated accordingly. It is not just a color change on the button.
 
-## 哪些内容必须你自己确认
+## Which values you must still confirm yourself
 
-最容易误解的一点是：`数量` 默认不会自动填写。
+The easiest thing to misunderstand is this: `Quantity` is not filled automatically.
 
-你在提交前至少还要自己确认这几项：
+Before submitting, you still need to confirm at least these items yourself:
 
-- 数量到底填多少。
-- 账户是不是只保留了你想操作的那几个。
-- 杠杆是否和当前市场、账户权限一致。
-- TP / SL 参考值是否真的符合你自己的风险边界。
+- What quantity should actually be used.
+- Whether only the accounts you want are still selected.
+- Whether the leverage matches the current market and the account permissions.
+- Whether the TP / SL references fit your own risk boundary.
 
-如果你一次选了多个账户，确认按钮并不代表“只下一笔单”，而是会按你勾选的账户逐个执行。
+If you select multiple accounts at once, the confirmation button does not mean “place one order only”. It will execute account by account for everything you selected.
 
-## 点确认后到底会发生什么
+## What exactly happens after you confirm
 
-点击底部确认按钮后，系统会按这个顺序做事：
+After you click the confirmation button at the bottom, the system works in this order:
 
-1. 先对每个已选账户逐个提交市价开仓。
-2. 对开仓成功的账户，稍等片刻后再单独补发 TP / SL。
-3. 把成功和失败结果汇总到当前窗口里。
+1. It submits a market open order for each selected account, one by one.
+2. For accounts where the open succeeded, it waits briefly and then sends TP / SL in a separate step.
+3. It aggregates the success and failure results back into the current modal.
 
-这意味着一个重要事实：`开仓成功` 和 `TP / SL 成功` 不是同一笔原子操作。
+This leads to one important fact: `open order succeeded` and `TP / SL succeeded` are not the same atomic action.
 
-如果某个账户开仓成功了，但后续 TP / SL 失败，窗口会明确把它显示成部分成功，而不是假装一切都完成了。
+If an account opens successfully but the later TP / SL step fails, the modal will clearly report a partial success instead of pretending the whole process completed cleanly.
 
-## 提交时你会看到什么
+## What you will see during submission
 
-开始提交后，窗口右侧会展开实时日志面板。它适合用来判断到底卡在了哪一步：
+Once submission starts, a real-time log panel expands on the right side of the modal. It is useful for identifying exactly where the process is stuck:
 
-- 是哪个账户正在发起开仓。
-- 哪个账户已经开仓成功。
-- TP / SL 是在哪个账户上补成功或补失败。
-- 最终是全部成功、部分成功，还是全部失败。
+- Which account is currently sending an open order.
+- Which account already opened successfully.
+- Where TP / SL succeeded or failed.
+- Whether the final outcome was full success, partial success, or total failure.
 
-如果全部成功，界面还会自动切到 [持仓页](positions-tab.md) 帮你核对结果；如果存在部分失败，窗口会保留在原地，方便你继续看日志和调整。
+If everything succeeds, the UI automatically switches to the [Positions Tab](positions-tab.md) so you can verify the result. If there is a partial failure, the modal stays open so you can continue reading the log and adjusting the input.
 
-## 第一次使用时的推荐方式
+## Recommended first-time usage
 
-1. 先只保留 1 个测试网账户。
-2. 手动填一个很小的数量，确认单位和方向没看反。
-3. 不要把 AI 给出的 TP / SL 原样当成必须值，先看一眼图表位置。
-4. 提交后立即去 [持仓页](positions-tab.md) 和 [历史委托页](order-history-tab.md) 对账。
+1. Keep only one testnet account selected first.
+2. Enter a very small quantity manually and confirm you did not misunderstand the unit or side.
+3. Do not treat AI-provided TP / SL as mandatory values. Check them against the chart first.
+4. After submission, immediately reconcile against [Positions Tab](positions-tab.md) and [Order History Tab](order-history-tab.md).
 
-!!! warning "这不是免确认下单"
-    AI 快捷下单只是帮你把表单预填得更快，不会替你绕过数量确认、账户选择和风险判断。
+!!! warning "This is not no-confirmation trading"
+    The AI quick-order modal only makes form filling faster. It does not remove the need to confirm quantity, account selection, and risk assumptions yourself.
 
-下一步建议看 [右侧下单面板](order-panel.md) 或 [一键自动做单](auto-trade-launcher.md)。
+Next, continue with [Right Order Panel](order-panel.md) or [One-Click Auto Trade](auto-trade-launcher.md).

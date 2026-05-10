@@ -1,37 +1,37 @@
-# 账户管理窗口
+# Account Center
 
-账户管理窗口是你接入交易所账户、区分测试网和主网、批量测连通性的主入口。
+The account management window is the main entry point for connecting exchange accounts, distinguishing testnet from live accounts, and batch-testing connectivity.
 
-![账户管理窗口](../assets/ui/account-modal.png)
+![Account center](../assets/ui/en/account-modal.png)
 
-## 这个窗口负责什么
+## What this window is responsible for
 
-- 查看已经保存的账户。
-- 区分主网账户和测试网账户。
-- 添加新账户。
-- 编辑已有账户。
-- 单独测试某个账户。
-- 批量测试全部账户。
-- 删除不再使用的账户。
+- Reviewing saved accounts.
+- Distinguishing live accounts from testnet accounts.
+- Adding new accounts.
+- Editing existing accounts.
+- Testing one account individually.
+- Batch-testing all accounts.
+- Deleting accounts you no longer use.
 
-## 建议的使用顺序
+## Recommended order of use
 
-1. 第一次先只加一个测试网账户。
-2. 保存后立刻做测试连接。
-3. 再去资产、持仓和历史页做只读验证。
-4. 最后才做最小下单。
+1. On your first attempt, add only one testnet account.
+2. Run a connection test immediately after saving it.
+3. Then perform read-only verification from assets, positions, and history.
+4. Only after that should you place a minimal test order.
 
-## 日常最常见的操作
+## The most common day-to-day actions
 
-- 新增一个测试网账户做练习。
-- 更新过期的 API Key。
-- 批量复测所有账户是否仍可用。
-- 删除已经废弃的账户配置。
+- Add one testnet account for practice.
+- Replace an expired API key.
+- Batch re-test all accounts to confirm they still work.
+- Delete an account configuration that is no longer needed.
 
-## 使用建议
+## Usage suggestions
 
-- 不要先把所有实盘账户一口气加进去。
-- `OKX` 和 `Bitget` 这类需要 `passphrase` 的交易所，要确认字段填完整。
-- 只要环境不确定，就先用测试网账户验证。
+- Do not add all live accounts at once on your first day.
+- For exchanges such as `OKX` and `Bitget` that require a `passphrase`, confirm that the field is fully filled.
+- Whenever the environment is uncertain, validate with a testnet account first.
 
-下一步建议看 [添加账户](add-account.md) 或 [资产页](assets-tab.md)。
+Next, continue with [Add Accounts](add-account.md) or [Assets Tab](assets-tab.md).

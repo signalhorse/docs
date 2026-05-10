@@ -1,112 +1,112 @@
-# 手动交易
+# Manual Trading
 
-Signal Horse 的本地 UI 适合做两件事：
+The local Signal Horse UI is well suited for two things:
 
-1. 用统一界面查看图表、账户、持仓、订单和历史记录。
-2. 在同一页面里完成手动下单、设置 TP/SL 和批量清理动作。
+1. Viewing charts, accounts, positions, orders, and historical records from a single interface.
+2. Completing manual order placement, TP / SL setup, and batch cleanup actions on the same page.
 
-如果你还不熟悉页面结构，先看 [界面导览](ui-tour.md)。
+If you are not yet familiar with the page layout, read [UI Overview](ui-tour.md) first.
 
-## 界面里最值得先理解的区域
+## The areas most worth understanding first
 
-- 图表与行情区域：看当前交易对、周期、价格上下文。对应 [图表与周期工具](chart-workspace.md)。
-- 账户与资产区域：看当前接入的账户、余额和状态。对应 [资产页](assets-tab.md) 和 [账户管理窗口](account-center.md)。
-- 持仓与订单区域：看当前仓位、挂单、TP/SL 和历史。对应 [持仓页](positions-tab.md)、[挂单页](open-orders-tab.md)、[历史委托页](order-history-tab.md)、[历史持仓页](position-history-tab.md)。
-- 下单区域：执行手动下单、设置杠杆、保证金模式、触发单等。对应 [右侧下单面板](order-panel.md)。
+- Chart and market area: used for the current symbol, timeframe, and price context. See [Chart and Timeframe Tools](chart-workspace.md).
+- Account and asset area: used for connected accounts, balances, and status. See [Assets Tab](assets-tab.md) and [Account Center](account-center.md).
+- Positions and orders area: used for current positions, open orders, TP / SL, and history. See [Positions Tab](positions-tab.md), [Open Orders Tab](open-orders-tab.md), [Order History Tab](order-history-tab.md), and [Position History Tab](position-history-tab.md).
+- Order entry area: used for manual orders, leverage, margin mode, and trigger orders. See [Right Order Panel](order-panel.md).
 
-## 右侧下单区的基本功能
+## Basic functions of the right order area
 
-右侧下单区是手动交易的主战场，最常用的功能包括：
+The right-side order area is the main battlefield for manual trading. The most common functions are:
 
-- 选择一个或多个账户。
-- 选择 `开仓` / `平仓`。
-- 选择 `做多` / `做空`。
-- 选择 `市价` / `限价` / `条件单`。
-- 输入数量。
-- 调整杠杆和保证金模式。
-- 打开 `TP / SL`。
-- 点击执行后，用底部标签确认结果。
+- Select one or more accounts.
+- Choose `Open` / `Close`.
+- Choose `Long` / `Short`.
+- Choose `Market` / `Limit` / `Trigger`.
+- Enter quantity.
+- Adjust leverage and margin mode.
+- Enable `TP / SL`.
+- After execution, confirm the result through the bottom tabs.
 
-## 手动下单前的最小检查
+## Minimal checks before manual order placement
 
-!!! tip "先检查再点击"
-    1. 当前是不是测试网账户。
-    2. 当前选择的是 `spot` 还是 `swap`。
-    3. 交易对是不是你要的那个，例如 `BTCUSDT`。
-    4. 数量是不是以币数量输入，而不是你误以为的合约张数或 USDT 金额。
-    5. 杠杆、方向、开平动作是不是正确。
+!!! tip "Check first, then click"
+    1. Is the current account a testnet account?
+    2. Is the current market `spot` or `swap`?
+    3. Is the symbol really the one you want, such as `BTCUSDT`?
+    4. Is the quantity entered in coin units, rather than what you mistakenly assume is contracts or USDT notional?
+    5. Are leverage, side, and open/close action correct?
 
-## 订单类型
+## Order types
 
-| 类型 | 典型用途 | 注意事项 |
+| Type | Typical use | Notes |
 | --- | --- | --- |
-| 市价单 | 立即成交 | 最容易验证链路是否通 |
-| 限价单 | 指定价格挂单 | 需要提供 `price` |
-| 条件单 | 到价触发后提交 | 主要适用于合约场景，需要 `trigger_price` 和 `trigger_direction` |
+| Market order | Immediate execution | The easiest way to verify that the end-to-end path works |
+| Limit order | Rest an order at a target price | Requires a `price` |
+| Trigger order | Submit after the trigger price is reached | Mainly intended for swap workflows and needs `trigger_price` plus `trigger_direction` |
 
-当前项目的 UI 对永续合约的条件单支持更完整。现货场景建议优先使用市价或限价，并以真实订单状态为准。
+The current UI has more complete support for trigger orders on perpetual swap markets. In spot workflows, prefer market or limit orders and trust the real exchange state over assumptions.
 
-## 合约交易的典型流程
+## Typical swap trading flow
 
-1. 选择交易所和 `swap`。
-2. 选择交易对和周期。
-3. 选择 `buy` 或 `sell`。
-4. 选择 `open` 或 `close`。
-5. 输入数量，当前 UI 默认以标的币数量作为输入语义。
-6. 需要时设置杠杆和保证金模式。
-7. 选择市价、限价或条件单。
-8. 成交后再设置 TP/SL。
+1. Select the exchange and `swap`.
+2. Select the symbol and timeframe.
+3. Choose `buy` or `sell`.
+4. Choose `open` or `close`.
+5. Enter quantity. In the current UI, the default input meaning is base-asset quantity.
+6. Set leverage and margin mode if needed.
+7. Choose market, limit, or trigger order.
+8. Configure TP / SL after the order is open if necessary.
 
-## 执行后去哪里确认
+## Where to verify after execution
 
-下单之后，不要只看按钮有没有点击成功，应该立刻到下方标签页确认：
+After placing an order, do not just check whether the button click appeared to succeed. Immediately verify it from the bottom tabs:
 
-- `持仓`：确认仓位是否真正出现。
-- `挂单`：确认限价单或条件单是否挂出。
-- `历史委托`：确认订单是否已经发出和成交。
-- `历史持仓`：确认仓位最终是怎么关闭的。
-- `资产`：确认余额是否发生变化。
+- `Positions`: confirm whether a real position appeared.
+- `Open Orders`: confirm whether a limit or trigger order is actually pending.
+- `Order History`: confirm whether the order was sent and filled.
+- `Position History`: confirm how the position was ultimately closed.
+- `Assets`: confirm whether balances changed.
 
-## 现货交易的典型流程
+## Typical spot trading flow
 
-1. 选择交易所和 `spot`。
-2. 选择交易对。
-3. 输入买入或卖出数量。
-4. 使用市价或限价完成交易。
-5. 在需要时使用批量清仓或逐笔撤单。
+1. Select the exchange and `spot`.
+2. Select the symbol.
+3. Enter the buy or sell quantity.
+4. Use a market or limit order to complete the trade.
+5. Use batch close or individual cancellation actions when needed.
 
-## TP / SL 的使用建议
+## TP / SL usage suggestions
 
-Signal Horse 支持为仓位设置止盈止损。核心建议是：
+Signal Horse supports setting take profit and stop loss for positions. The core advice is:
 
-- 先确认仓位已经真实存在。
-- 再根据多空方向设置 TP / SL。
-- 只要交易所回报限制、仓位不足或测试网能力不一致，应该以接口返回结果为准。
+- Confirm that the position really exists first.
+- Then set TP / SL according to long or short direction.
+- Whenever the exchange reports limits, insufficient position size, or different testnet capabilities, trust the API result over assumptions.
 
-在 UI 里，最简单的用法是：先开仓，再到持仓表点击 `TP/SL` 按钮设置保护。
+Inside the UI, the easiest workflow is to open the position first, then use the `TP/SL` button in the positions table to add protection.
 
-## 撤单与一键清理
+## Cancellations and one-click cleanup
 
-手动交易里最常用的清理动作通常有三类：
+The most common cleanup actions in manual trading are usually:
 
-- 撤销普通挂单。
-- 取消 TP / SL。
-- 一键平掉当前合约仓位或一键卖出现货持仓。
+- Cancel normal open orders.
+- Cancel TP / SL.
+- One-click close the current swap position or one-click sell the current spot holdings.
 
-右侧面板底部的 `批量工具` 可以帮助你快速清理多账户下的风险，但在执行前一定要再次确认当前选中账户。
+The `Batch Tools` section at the bottom of the right panel can help you clean up risk quickly across multiple accounts, but always verify the currently selected accounts again before executing.
 
-在批量动作之前，请再次确认当前账户和当前市场类型，避免误操作到错误账户。
+Before any batch action, confirm the current account and market type one more time to avoid operating on the wrong account.
 
-## 推荐的第一次手动交易练习
+## Recommended first manual trading exercise
 
-先在测试网做一组最小动作：
+Use testnet to complete a minimal sequence first:
 
-1. 读取余额。
-2. 开一笔最小市价单。
-3. 查看持仓是否出现。
-4. 设置一组 TP / SL。
-5. 再执行关闭或清理动作。
+1. Read balances.
+2. Open one minimal market order.
+3. Confirm that the position appears.
+4. Set one TP / SL pair.
+5. Then execute one close or cleanup action.
 
-完成这一组动作后，再进入 [AI 与自动化](ai-automation.md)。
+After completing this sequence, continue to [AI and Automation](ai-automation.md).
 
-如果你后面想把这些动作自动化，再去看 [API 附录（高级）](../reference/api.md)。
+If you later want to automate these actions, go to [API Appendix (Advanced)](../reference/api.md).

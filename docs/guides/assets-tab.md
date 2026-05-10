@@ -1,32 +1,32 @@
-# 资产页
+# Assets Tab
 
-`资产` 页用来回答一个最基础的问题：你当前账户里到底还有多少可用资金，以及这些资金大概分布在哪些币种上。
+The `Assets` tab answers one of the most basic questions: how much usable capital is left in the current account, and how is it roughly distributed across assets?
 
-![资产页](../assets/ui/assets-panel.png)
+![Assets tab](../assets/ui/en/assets-panel.png)
 
-## 这一页会显示什么
+## What this tab shows
 
-- 按账户分组的资产列表。
-- 每个币种的总额、可用、冻结。
-- 当前价格和市值占比。
-- 账户内主要资金分布。
+- Asset lists grouped by account.
+- Total, available, and frozen balances for each asset.
+- Current price and estimated value share.
+- The main capital distribution within the account.
 
-## 什么时候先看这页
+## When to check this tab first
 
-1. 你准备下单之前。
-2. 你下完单之后，想确认余额是否变化。
-3. 你要判断是不是还有足够的可用资金时。
+1. Before placing an order.
+2. After placing an order, when you want to confirm whether balances changed.
+3. When you want to know whether enough available funds remain.
 
-## 这页最实用的用途
+## The most practical uses of this tab
 
-- 确认可用资金够不够开仓。
-- 观察是否有资金被挂单或仓位冻结。
-- 快速看出主资金目前集中在哪个币种。
+- Confirm whether available funds are enough to open a position.
+- Observe whether capital is frozen by open orders or positions.
+- Quickly see which asset currently holds the largest share of capital.
 
-## 读这页时要注意
+## Things to watch while reading it
 
-- 个别币种可能没有现价，这时会显示为空或破折号。
-- 资产页是余额视角，不等于持仓页的仓位视角。
-- 冻结资金常常意味着还有挂单、条件单或其他占用。
+- Some assets may not have a current market price, in which case the field may appear blank or as a dash.
+- The assets tab is a balance view, not a positions view.
+- Frozen balances often mean there are still open orders, trigger orders, or other active locks.
 
-下一步建议看 [持仓页](positions-tab.md) 或 [手动交易](manual-trading.md)。
+Next, continue with [Positions Tab](positions-tab.md) or [Manual Trading](manual-trading.md).

@@ -1,62 +1,62 @@
-# 安装部署
+# Installation
 
-本章说明如何把 Signal Horse 安装到你的本机或服务器，并确认安装物、启动方式和访问地址都符合当前项目事实。
+This chapter explains how to install Signal Horse on your local machine or server, and how to confirm that the package, startup method, and access URL match the current product behavior.
 
-## 安装前准备
+## Before you install
 
-- 优先准备测试网或模拟盘凭据，不要第一次就直接使用实盘账户。
-- 如果你是 Windows 用户，最简单的方式是使用当前的便携 ZIP。
-- 如果你是 Linux / macOS 用户，最简单的方式是使用一键安装脚本。
+- Prepare testnet or paper-trading credentials first. Do not start with a live account on day one.
+- If you are on Windows, the easiest option is the current portable ZIP package.
+- If you are on Linux or macOS, the easiest option is the one-line installer script.
 
-## 平台安装方式
+## Platform installation methods
 
 === "Windows"
 
-    当前推荐安装物是：
+    The currently recommended package is:
 
     ```text
     signal_horse_windows_portable.zip
     ```
 
-    操作步骤：
+    Steps:
 
-    1. 下载并解压 `signal_horse_windows_portable.zip`。
-    2. 打开解压后的目录。
-    3. 运行 `Start Signal Executor.cmd`。
-    4. 程序会尝试在后台启动 `SignalHorse.exe`，然后打开本地浏览器界面。
+    1. Download and extract `signal_horse_windows_portable.zip`.
+    2. Open the extracted folder.
+    3. Run `Start Signal Executor.cmd`.
+    4. The program will try to start `SignalHorse.exe` in the background and then open the local browser UI.
 
-    默认访问地址：
+    Default access URL:
 
     ```text
     http://127.0.0.1:38182/
     ```
 
-    如果你更喜欢脚本安装到 `%LOCALAPPDATA%`，可使用：
+    If you prefer a script-based install into `%LOCALAPPDATA%`, use:
 
     ```powershell
     Invoke-WebRequest -Uri https://signal.horse/install.ps1 -OutFile install.ps1
     powershell -ExecutionPolicy Bypass -File .\install.ps1 -Yes
     ```
 
-    Windows 便携包当前保持在用户空间内运行，不要求管理员权限，也不会自动写入系统级自启动项。
+    The Windows portable package currently runs in user space, does not require administrator privileges, and does not automatically create a system-level auto-start entry.
 
 === "macOS"
 
-    当前主发布物通常分为两类：
+    The current primary release artifacts are usually:
 
     ```text
     signal-executor-macos-arm64.dmg
     signal-executor-macos-amd64.dmg
     ```
 
-    桌面用户建议：
+    For desktop users, the recommended flow is:
 
-    1. 下载对应架构的 `.dmg`。
-    2. 将应用拖入 `/Applications`。
-    3. 首次打开后，通过菜单栏图标打开浏览器 UI。
-    4. 需要时使用菜单执行重启服务、安装服务等动作。
+    1. Download the `.dmg` that matches your CPU architecture.
+    2. Drag the app into `/Applications`.
+    3. Open the browser UI from the menu bar icon after first launch.
+    4. Use menu actions such as service restart or service installation when needed.
 
-    如果你要做命令行部署或无人值守安装：
+    If you need a command-line or unattended installation:
 
     ```bash
     curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service
@@ -64,30 +64,30 @@
 
 === "Linux"
 
-    Linux 当前推荐使用一键安装脚本：
+    The current recommended Linux method is the one-line installer:
 
     ```bash
     curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service
     ```
 
-    安装脚本会尝试：
+    The installer will try to:
 
-    1. 下载正确架构的可执行文件。
-    2. 安装到系统目录或用户目录。
-    3. 配置本地服务。
-    4. 让服务在当前用户环境中自动启动。
+    1. Download the correct executable for the current architecture.
+    2. Install it into a system or user directory.
+    3. Configure the local service.
+    4. Make the service start automatically in the current user environment.
 
-    安装完成后，本地访问地址仍然是：
+    After installation, the local access URL is still:
 
     ```text
     http://127.0.0.1:38182/
     ```
 
-## 安装后的第一件事
+## The first thing to do after installation
 
-安装完不要马上下单。先做以下检查：
+Do not place an order immediately after installing. Start with these checks:
 
-1. 访问 `http://127.0.0.1:38182/` 看页面是否能打开。
-2. 调用 `GET /health` 确认服务在线。
-3. 只用测试网账户验证一次余额和持仓读取。
-4. 再进入 [首次启动](first-run.md) 和 [添加账户](../guides/add-account.md) 继续配置。
+1. Open `http://127.0.0.1:38182/` and make sure the page loads.
+2. Call `GET /health` to confirm that the service is online.
+3. Use only testnet accounts to verify one balance read and one positions read.
+4. Then continue with [First Run](first-run.md) and [Add Accounts](../guides/add-account.md).

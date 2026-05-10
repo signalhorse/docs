@@ -1,71 +1,71 @@
-# 右下角 AI 分析
+# Bottom-Right AI Analysis
 
-这组按钮是图表区里最快的分析入口。它适合做“先看当前 symbol，再立刻调模型给出技术判断”，而不是先去顶部配置页绕一圈。
+This button group is the fastest analysis entry point inside the chart area. It is designed for the workflow “look at the current symbol first, then immediately ask a model for a technical judgment”, instead of detouring through the top settings dialog.
 
-## 入口长什么样
+## What the entry looks like
 
-![右下角 AI 菜单](../assets/ui/ai-fab-panel.png)
+![Bottom-right AI menu](../assets/ui/en/ai-fab-panel.png)
 
-右下角这一组入口有三层用途：
+This entry group has three layers of use:
 
-- 点击单个模型卡片，只用一个模型分析当前交易对。
-- 点击 `全部模型同时分析`，让多个可运行模型同时给出观点。
-- 点击 `一键自动看盘做单`，直接进入自动任务启动弹窗。
+- Click a single model card to analyze the current symbol with just one model.
+- Click `Analyze with All Models` to compare multiple runnable models on the same market.
+- Click `One-Click Auto Trade` to enter the automatic task launcher directly.
 
-!!! tip "两种触发方式"
-    右下角小 `AI` 按钮可以直接触发默认分析；把鼠标移上去则会展开完整菜单，适合明确选择模型或进入自动做单。
+!!! tip "Two trigger styles"
+    The small bottom-right `AI` button can trigger the default analysis directly. Hovering over it expands the full menu, which is better when you want to choose a model explicitly or open automation.
 
-## 分析开始后会发生什么
+## What happens after analysis starts
 
-![AI 分析进行中](../assets/ui/ai-analysis-loading-glm-5-1.png)
+![AI analysis in progress](../assets/ui/en/ai-analysis-loading-glm-5-1.png)
 
-开始分析后，图表区会进入等待状态。你通常会看到：
+After analysis starts, the chart area enters a waiting state. You will usually see:
 
-- 右下角 AI 按钮进入加载态。
-- 图表上出现扫描中的视觉反馈。
-- 当前 symbol 和周期保持不变，结果返回后直接叠加在图表上。
+- The bottom-right AI button switch into a loading state.
+- A scanning-style visual overlay on the chart.
+- The current symbol and timeframe remain unchanged, and the result is added back onto the current chart when it returns.
 
-这一步可能只要几秒，也可能更久，取决于模型提供方、网络和当前排队情况。不要在加载中连续重复点击多个模型，否则你很难判断最后是哪次请求返回了结果。
+This step may take a few seconds or much longer, depending on the model provider, network conditions, and current queue length. Do not keep clicking multiple models during loading, or it becomes difficult to tell which request produced the final result.
 
-## 结果卡片怎么读
+## How to read the result card
 
-![AI 分析结果卡片](../assets/ui/ai-analysis-result-card.png)
+![AI analysis result card](../assets/ui/en/ai-analysis-result-card.png)
 
-分析完成后，图表左侧会出现结果卡片。它通常包含这些信息：
+After analysis completes, a result card appears on the left side of the chart. It usually contains:
 
-- `主要模型`：这次分析最终采用的是哪个模型。
-- `看涨 / 看跌 / 中性`：AI 给出的当前方向判断。
-- `强度`：当前观点强弱的量化参考。
-- `形态名`：例如趋势延续、回调、盘整等结构描述。
-- `摘要`：把多周期和指标判断压缩成一段可读结论。
-- `支撑 / 压力`：给出当前更值得盯住的关键价格区间。
+- `Primary model`: which model was actually used for the final output.
+- `Bullish / Bearish / Neutral`: the direction judgment from AI.
+- `Strength`: a numeric reference for how strong that view is.
+- `Pattern`: a structural label such as continuation, pullback, or consolidation.
+- `Summary`: a compressed human-readable conclusion based on multi-timeframe and indicator context.
+- `Support / Resistance`: the key price areas worth watching next.
 
-## 卡片底部按钮是什么意思
+## What the bottom button on the card means
 
-结果卡片底部的 `一键做多` 或 `一键做空`，不是直接绕过确认把单子发出去。
+The `Quick Long` or `Quick Short` button at the bottom of the result card does not bypass confirmation and send an order immediately.
 
-它会打开 [AI 快捷下单窗口](ai-quick-order.md)，并自动带入：
+It opens the [AI Quick Order Modal](ai-quick-order.md) and pre-fills:
 
-- AI 给出的方向
-- 当前默认杠杆
-- 从支撑 / 压力推出来的 TP / SL 参考值
-- 当前已选中的账户，或默认选择一个账户
+- The direction suggested by AI
+- The current default leverage
+- TP / SL reference values inferred from support and resistance
+- The currently selected accounts, or one default account if none was selected before
 
-但有一个关键点要记住：`数量` 默认不会帮你填好，仍然需要你自己确认后输入。
+But one important detail remains: `Quantity` is not filled in automatically. You still need to review and enter it yourself.
 
-也就是说，这一步更像“用 AI 结果快速填表”，最后是否真的提交，仍然由你在下单窗口里确认。
+In other words, this step is closer to “use AI output to fill the form faster”. Whether the order is actually submitted is still decided inside the order modal.
 
-## 更稳妥的使用顺序
+## A safer order of use
 
-1. 先确认左侧交易所、市场类型、交易对和周期已经选对。
-2. 只跑一个你信任的模型，先看它的方向和摘要是否合理。
-3. 再决定要不要点 `全部模型同时分析` 做交叉对比。
-4. 如果结果和你的图表观察基本一致，再考虑进入 AI 快捷下单或自动做单。
+1. Confirm that the exchange, market type, symbol, and timeframe on the left side are already correct.
+2. Run one model you trust first, and see whether the direction and summary make sense.
+3. Then decide whether to click `Analyze with All Models` for cross-checking.
+4. Only if the result broadly matches your own chart reading should you proceed to the quick-order or auto-trade flow.
 
-## 什么时候不该直接照着做
+## When you should not follow it directly
 
-- 你还没确认当前是不是测试网账户。
-- 你还没跑通过一次普通手动下单。
-- 你只看了 AI 结论，没有回看图表结构和底部历史记录。
+- You have not confirmed whether the current account is a testnet account.
+- You have not successfully completed one normal manual order yet.
+- You only looked at the AI conclusion and did not review the chart structure and bottom history tabs.
 
-下一步建议看 [AI 快捷下单窗口](ai-quick-order.md)、[一键自动做单](auto-trade-launcher.md) 或 [手动交易](manual-trading.md)。
+Next, go to [AI Quick Order Modal](ai-quick-order.md), [One-Click Auto Trade](auto-trade-launcher.md), or [Manual Trading](manual-trading.md).

@@ -1,31 +1,31 @@
-# 历史持仓页
+# Position History Tab
 
-`历史持仓` 页看的是已经结束的仓位结果。它不是“当前发生了什么”，而是“上一笔交易最后赚亏了多少”。
+The `Position History` tab is about completed positions. It does not tell you “what is happening right now”, but rather “how much the last trade ultimately gained or lost”.
 
-![历史持仓页](../assets/ui/position-history-panel.png)
+![Position history tab](../assets/ui/en/position-history-panel.png)
 
-## 这一页会显示什么
+## What this tab shows
 
-- 已结束仓位的方向。
-- 开仓价、平仓价。
-- 数量和最终盈亏。
-- 平仓时间。
+- The side of completed positions.
+- Entry price and exit price.
+- Quantity and final PnL.
+- Closing time.
 
-## 这页适合什么时候看
+## When this tab is most useful
 
-1. 一笔仓位已经完全结束后。
-2. 你想复盘某次开平仓结果时。
-3. 你想确认某个策略最近到底是赚还是亏时。
+1. After a position has fully closed.
+2. When you want to review the result of a past open/close sequence.
+3. When you want to confirm whether a recent strategy is actually making or losing money.
 
-## 和持仓页有什么区别
+## How it differs from the positions tab
 
-- [持仓页](positions-tab.md) 看当前还活着的仓位。
-- 历史持仓页看已经关闭的仓位。
-- 前者偏执行监控，后者偏复盘统计。
+- [Positions Tab](positions-tab.md) shows positions that are still alive.
+- Position History shows positions that are already closed.
+- The former is execution monitoring. The latter is review and statistics.
 
-## 使用建议
+## Usage suggestions
 
-- 先用这页确认最终盈亏，再结合图表回看入场和出场位置。
-- 如果你在测试网练习流程，这一页是最直观的结果汇总页。
+- Confirm the final PnL here first, then go back to the chart to review the entry and exit zones.
+- If you are practicing workflows in testnet, this page is the clearest result summary.
 
-下一步建议看 [自动做单页](auto-trade-tab.md) 或 [AI 与自动化](ai-automation.md)。
+Next, continue with [Auto Trade Tab](auto-trade-tab.md) or [AI and Automation](ai-automation.md).

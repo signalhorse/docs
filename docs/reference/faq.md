@@ -1,78 +1,78 @@
-# 常见问题
+# FAQ
 
-## 1. 页面打不开，应该先查什么？
+## 1. The page will not open. What should I check first?
 
-先查本地服务是否在线：
+Check whether the local service is online first:
 
 ```bash
 curl -fsS http://127.0.0.1:38182/health
 ```
 
-如果健康检查都不通，不要先怀疑前端页面，先确认进程是否真的已经启动。
+If the health check fails, do not start by blaming the frontend page. Confirm that the process has really started.
 
-## 2. 为什么我能打开页面，但读取余额失败？
+## 2. Why can I open the page, but balance reads fail?
 
-通常优先检查这几类问题：
+Usually you should check these categories first:
 
-- 账户环境选错了，实盘密钥却配了 `testnet=true`。
-- 现货和合约测试网凭据不是同一套。
-- API Key 权限不足。
-- 交易所要求的 `passphrase` 没填。
+- The account environment is wrong, for example a live key was configured with `testnet=true`.
+- Spot and swap testnet credentials are not the same set.
+- The API key does not have enough permissions.
+- A required `passphrase` was not filled in.
 
-## 3. Windows 版为什么不是安装包而是 ZIP？
+## 3. Why is the Windows release a ZIP instead of an installer?
 
-当前 Windows 主发布物是便携 ZIP：`signal_horse_windows_portable.zip`。它的优点是简单、无管理员依赖、可直接解压运行，适合本地浏览器式 UI。
+The current primary Windows artifact is the portable ZIP: `signal_horse_windows_portable.zip`. Its advantages are simplicity, no admin dependency, and direct extract-and-run behavior, which fits a local browser-style UI well.
 
-如果你想看更新方式，直接看 [更新与维护](../guides/update-maintenance.md)。
+If you want update instructions, go directly to [Updates and Maintenance](../guides/update-maintenance.md).
 
-## 4. Windows 启动后会自动打开哪里？
+## 4. Where does Windows open after startup?
 
-默认会打开：
+By default it opens:
 
 ```text
 http://127.0.0.1:38182/
 ```
 
-## 5. 为什么测试网能读，实盘却失败？
+## 5. Why does testnet work, but live trading fail?
 
-因为很多交易所把测试网和实盘完全分开，主机、权限、密钥、账户体系都不一样。只要环境不同，就不要默认凭据可以复用。
+Because many exchanges separate testnet and live environments completely: hosts, permissions, keys, and account systems are all different. As soon as the environment changes, do not assume credentials can be reused.
 
-## 6. Linux 服务器上怎么让别人也能访问页面？
+## 6. How can other people access the page on a Linux server?
 
-你需要同时满足两件事：
+Two conditions must both be true:
 
-1. Signal Horse 已经监听并正常启动。
-2. 服务器防火墙 / 安全组放行了 `38182` 端口。
+1. Signal Horse is already listening and running normally.
+2. The server firewall or security group allows port `38182`.
 
-然后使用：
+Then access it with:
 
 ```text
 http://<server-ip>:38182/
 ```
 
-## 7. GitHub Pages 能直接跑这个项目官网吗？
+## 7. Can GitHub Pages run the whole project website directly?
 
-不能。GitHub Pages 只能托管静态文档站。它不能直接运行本项目的服务端，也不能替代本地执行器。
+No. GitHub Pages can only host a static documentation site. It cannot run the backend of this project and it cannot replace the local executor.
 
-## 8. 文档站和主站分离后，下载链接放哪里？
+## 8. After separating the docs site and the main site, where should download links live?
 
-推荐做法是：
+The recommended split is:
 
-- GitHub Pages 负责托管文档。
-- 安装脚本、ZIP、DMG、Linux 二进制继续放在 `signal.horse` 或 GitHub Releases。
-- 文档里只引用这些正式下载地址。
+- GitHub Pages hosts the documentation.
+- Install scripts, ZIPs, DMGs, and Linux binaries remain on `signal.horse` or GitHub Releases.
+- The docs only reference those official download URLs.
 
-## 9. 为什么我设置了 TP / SL，却没有按预期工作？
+## 9. Why did my TP / SL not work as expected?
 
-先检查：
+Check these first:
 
-- 你的持仓是否已经真实存在。
-- 当前是不是测试网。
-- 交易所当前环境是否支持该类 TP / SL。
-- 触发方向和价格是否合理。
+- Whether the position really exists already.
+- Whether you are currently in testnet.
+- Whether the current exchange environment supports that TP / SL mode.
+- Whether the trigger side and price are reasonable.
 
-对于测试网，交易所环境限制比 UI 按钮状态更值得信任。
+In testnet workflows, exchange-side limitations are usually more trustworthy than the UI button state.
 
-## 10. 我应该先学手动交易还是先开自动化？
+## 10. Should I learn manual trading first or automation first?
 
-先手动，再自动化。至少先完整跑通一次：读取余额 -> 开仓 -> 查持仓 -> 设置 TP / SL -> 平仓。跑通这一轮后再让 AI 自动执行。
+Manual first, then automation. At minimum, complete this flow once end to end: read balances -> open a position -> check positions -> set TP / SL -> close the position. Only after that should you let AI execute automatically.
