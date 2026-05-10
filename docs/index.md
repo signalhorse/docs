@@ -2,7 +2,7 @@
 
 Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `rust_executor` 提供的本地 UI 使用为主，重点讲清楚怎么在界面里看盘、切交易对、管理账户、手动下单、使用 AI 与查看执行结果。
 
-![Signal Horse 主界面总览](assets/ui/overview.png)
+![Signal Horse 主界面总览](assets/ui/overview-btc-1h.png)
 
 !!! note "截图说明"
     本手册里的界面截图来自测试环境，目的只是帮助你理解界面布局和操作入口。你自己的账户、价格、持仓和 AI 配置会与截图不同。

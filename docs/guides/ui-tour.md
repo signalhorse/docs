@@ -2,7 +2,7 @@
 
 这一页只做一件事：帮你在第一次打开 Signal Horse UI 时，先建立整张页面的地图，然后再进入后面的单功能页面。
 
-![Signal Horse 主界面总览](../assets/ui/overview.png)
+![Signal Horse 主界面总览](../assets/ui/overview-btc-1h.png)
 
 !!! tip "先按图认识，再操作"
     第一次使用时，不要急着下单。先把这张总览图对应到你自己的页面，再按本页顺序逐块熟悉。

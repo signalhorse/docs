@@ -2,7 +2,7 @@
 
 This page only does one thing: it helps you build a mental map of the Signal Horse UI before you jump into the feature-specific pages.
 
-![Signal Horse main UI overview](../assets/ui/en/overview.png)
+![Signal Horse main UI overview](../assets/ui/en/overview-btc-1h.png)
 
 !!! tip "Understand the map before you operate"
     On your first use, do not rush into order placement. Match this overview against your own screen first, then learn each area step by step.
