@@ -52,6 +52,14 @@ plugins:
                 - UI Overview: guides/ui-tour.md
                 - Add Accounts: guides/add-account.md
             - Interface Guide:
+                - Connect Exchange API Keys:
+                    - Overview: guides/connect-exchange-keys/index.md
+                    - OKX: guides/connect-exchange-keys/okx.md
+                    - Binance: guides/connect-exchange-keys/binance.md
+                    - Bitget: guides/connect-exchange-keys/bitget.md
+                    - Gate.io: guides/connect-exchange-keys/gate.md
+                    - Bybit: guides/connect-exchange-keys/bybit.md
+                    - Add Keys to SignalHorse: guides/connect-exchange-keys/signalhorse.md
                 - Top Status Bar: guides/top-bar.md
                 - Markets and Symbols Sidebar: guides/market-sidebar.md
                 - Chart and Timeframe Tools: guides/chart-workspace.md
@@ -101,6 +109,14 @@ nav:
       - 界面总览: guides/ui-tour.md
       - 添加账户: guides/add-account.md
   - 界面详解:
+      - 连接交易所密钥:
+          - 教程总览: guides/connect-exchange-keys/index.md
+          - OKX: guides/connect-exchange-keys/okx.md
+          - Binance: guides/connect-exchange-keys/binance.md
+          - Bitget: guides/connect-exchange-keys/bitget.md
+          - Gate.io: guides/connect-exchange-keys/gate.md
+          - Bybit: guides/connect-exchange-keys/bybit.md
+          - 接入 SignalHorse: guides/connect-exchange-keys/signalhorse.md
       - 顶部状态栏: guides/top-bar.md
       - 市场与交易对侧栏: guides/market-sidebar.md
       - 图表与周期工具: guides/chart-workspace.md

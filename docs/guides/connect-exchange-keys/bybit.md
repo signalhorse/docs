@@ -1,0 +1,22 @@
+# Bybit
+
+Use this page to create a Bybit API key for SignalHorse.
+
+Open the Bybit API management page here:
+
+`https://www.bybit.com/app/user/api-management`
+
+## Create the key
+
+1. Sign in to Bybit and open the API management page.
+2. Click the top-right create button and choose the system-generated API key flow.
+
+![Bybit create API button](../../assets/exchange-api/bybit-create-button.png)
+
+3. Select the required permissions and finish the key creation.
+
+![Bybit permissions](../../assets/exchange-api/bybit-permissions.png)
+
+4. Save the permission setup as shown, then keep the generated API key and secret available for the next step.
+
+After the key is ready, continue to [Add the Keys to SignalHorse](signalhorse.md).
