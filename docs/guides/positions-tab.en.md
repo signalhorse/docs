@@ -2,7 +2,7 @@
 
 The `Positions` tab is your first place to confirm whether a position really opened.
 
-![Positions tab](../assets/ui/positions-panel.png)
+![Positions tab](../assets/ui/en/positions-panel.png)
 
 ## What you can see here
 

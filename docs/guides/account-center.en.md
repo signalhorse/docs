@@ -2,7 +2,7 @@
 
 The account management window is the main entry point for connecting exchange accounts, distinguishing testnet from live accounts, and batch-testing connectivity.
 
-![Account center](../assets/ui/account-modal.png)
+![Account center](../assets/ui/en/account-modal.png)
 
 ## What this window is responsible for
 

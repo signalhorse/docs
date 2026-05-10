@@ -2,7 +2,7 @@
 
 The `Assets` tab answers one of the most basic questions: how much usable capital is left in the current account, and how is it roughly distributed across assets?
 
-![Assets tab](../assets/ui/assets-panel.png)
+![Assets tab](../assets/ui/en/assets-panel.png)
 
 ## What this tab shows
 

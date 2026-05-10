@@ -2,7 +2,7 @@
 
 The AI model window is the entry point for configuring model sources, the default model, and connection tests. It is a configuration center, not an immediate trading area.
 
-![AI model center](../assets/ui/ai-settings.png)
+![AI model center](../assets/ui/en/ai-settings.png)
 
 ## What this window usually does
 

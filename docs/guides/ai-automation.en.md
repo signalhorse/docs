@@ -2,7 +2,7 @@
 
 Signal Horse is not just a manual trading page. It also provides a local execution surface for AI workflows and automated tasks.
 
-![AI model management window](../assets/ui/ai-settings.png)
+![AI model management window](../assets/ui/en/ai-settings.png)
 
 ## Two common usage modes
 

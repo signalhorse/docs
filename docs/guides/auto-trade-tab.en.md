@@ -2,7 +2,7 @@
 
 The `Auto Trade` tab is the main day-to-day management entry point for Bot tasks. It is not only about creation. It is about reviewing the current state, checking returns, checking status, and starting or stopping tasks.
 
-![Auto trade tab](../assets/ui/auto-trade-panel.png)
+![Auto trade tab](../assets/ui/en/auto-trade-panel.png)
 
 If you want to create an automatic task first from the bottom-right chart button, read [One-Click Auto Trade](auto-trade-launcher.md) first. This page is more about “how to keep checking and managing tasks after they already exist”.
 

@@ -2,7 +2,7 @@
 
 The top status bar answers two questions: what you are currently looking at, and whether the local executor is currently reachable.
 
-![Top status bar](../assets/ui/topbar.png)
+![Top status bar](../assets/ui/en/topbar.png)
 
 ## What this bar contains
 

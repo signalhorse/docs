@@ -2,7 +2,7 @@
 
 The `Position History` tab is about completed positions. It does not tell you “what is happening right now”, but rather “how much the last trade ultimately gained or lost”.
 
-![Position history tab](../assets/ui/position-history-panel.png)
+![Position history tab](../assets/ui/en/position-history-panel.png)
 
 ## What this tab shows
 

@@ -2,7 +2,7 @@
 
 The center area is where you make trading judgments. It is mainly responsible for viewing the market, switching timeframes, enabling indicators, and launching AI analysis from the chart.
 
-![Chart and timeframe tools](../assets/ui/chart-workspace.png)
+![Chart and timeframe tools](../assets/ui/en/chart-workspace.png)
 
 ## What this area contains
 

@@ -2,7 +2,7 @@
 
 The `Order History` tab is the execution evidence page. It answers this question: did the order really go through the system, and what final state did it end up in?
 
-![Order history tab](../assets/ui/order-history-panel.png)
+![Order history tab](../assets/ui/en/order-history-panel.png)
 
 ## What this tab shows
 

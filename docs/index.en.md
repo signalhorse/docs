@@ -2,7 +2,7 @@
 
 Signal Horse is a local-first crypto trading workstation. This handbook focuses on the local UI provided by `rust_executor`, with an emphasis on understanding the interface, connecting accounts, placing manual orders, using AI-assisted features, and checking results.
 
-![Signal Horse main UI overview](assets/ui/overview.png)
+![Signal Horse main UI overview](assets/ui/en/overview.png)
 
 !!! note "About the screenshots"
     The screenshots in this handbook come from a test environment. They are here to explain the layout and entry points. Your own accounts, prices, positions, and AI configuration will differ.

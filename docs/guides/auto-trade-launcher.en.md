@@ -4,7 +4,7 @@
 
 ## What the launch dialog looks like
 
-![One-click auto trade launch dialog](../assets/ui/auto-trade-launcher.png)
+![One-click auto trade launch dialog](../assets/ui/en/auto-trade-launcher.png)
 
 This dialog puts the most frequently used startup parameters on one screen:
 
@@ -21,7 +21,7 @@ The line at the top, such as `BYBIT / NOTUSDT / 1h`, is not decoration. It means
 
 ## What multi-symbol mode looks like
 
-![Multi-symbol auto trade setup](../assets/ui/auto-trade-launcher-multi-symbol.png)
+![Multi-symbol auto trade setup](../assets/ui/en/auto-trade-launcher-multi-symbol.png)
 
 If you want to monitor more than one market, this dialog can become a multi-symbol launcher directly:
 
@@ -84,7 +84,7 @@ If this is your first trial, keep only one symbol selected instead of filling al
 
 ## Where to verify after launch
 
-![Auto-trade task list](../assets/ui/auto-trade-panel.png)
+![Auto-trade task list](../assets/ui/en/auto-trade-panel.png)
 
 After a successful launch, the Bot detail panel usually appears first. That is your first place to review the initial logs, parameters, and next analysis time.
 

@@ -4,7 +4,7 @@ This button group is the fastest analysis entry point inside the chart area. It 
 
 ## What the entry looks like
 
-![Bottom-right AI menu](../assets/ui/ai-fab-panel.png)
+![Bottom-right AI menu](../assets/ui/en/ai-fab-panel.png)
 
 This entry group has three layers of use:
 
@@ -17,7 +17,7 @@ This entry group has three layers of use:
 
 ## What happens after analysis starts
 
-![AI analysis in progress](../assets/ui/ai-analysis-loading-glm-5-1.png)
+![AI analysis in progress](../assets/ui/en/ai-analysis-loading-glm-5-1.png)
 
 After analysis starts, the chart area enters a waiting state. You will usually see:
 
@@ -29,7 +29,7 @@ This step may take a few seconds or much longer, depending on the model provider
 
 ## How to read the result card
 
-![AI analysis result card](../assets/ui/ai-analysis-result-card.png)
+![AI analysis result card](../assets/ui/en/ai-analysis-result-card.png)
 
 After analysis completes, a result card appears on the left side of the chart. It usually contains:
 

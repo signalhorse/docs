@@ -2,7 +2,7 @@
 
 The left sidebar decides which market and which symbol you are actually looking at. Many “why can't I read positions?” or “why is the order result wrong?” issues start here.
 
-![Markets and symbols sidebar](../assets/ui/market-sidebar.png)
+![Markets and symbols sidebar](../assets/ui/en/market-sidebar.png)
 
 ## What this area contains
 

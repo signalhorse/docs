@@ -2,7 +2,7 @@
 
 This page focuses on one thing only: how to connect an account through the UI and confirm that it can read balances, read positions, and pass a connection test.
 
-![Account center](../assets/ui/account-modal.png)
+![Account center](../assets/ui/en/account-modal.png)
 
 ## Where to enter this flow
 

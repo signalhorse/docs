@@ -2,7 +2,7 @@
 
 The `Open Orders` tab is used to confirm orders and trigger orders that are still active. Whenever you use a limit order, trigger order, or TP / SL, this page is worth checking immediately.
 
-![Open orders tab](../assets/ui/open-orders-panel.png)
+![Open orders tab](../assets/ui/en/open-orders-panel.png)
 
 ## What this tab shows
 

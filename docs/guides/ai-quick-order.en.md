@@ -2,7 +2,7 @@
 
 This modal is the confirmation layer between the AI result card and a real order submission. Its value is not to skip judgment for you, but to pre-fill the direction and price references that AI already inferred so you do not have to type everything again.
 
-![AI quick order modal](../assets/ui/ai-quick-order-modal.png)
+![AI quick order modal](../assets/ui/en/ai-quick-order-modal.png)
 
 ## Where this modal comes from
 

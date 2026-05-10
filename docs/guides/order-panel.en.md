@@ -2,7 +2,7 @@
 
 The right order panel is the area in the entire UI where you need to operate most carefully. It is responsible for real order submission, and it also holds the batch cleanup tools.
 
-![Right order panel](../assets/ui/order-panel.png)
+![Right order panel](../assets/ui/en/order-panel.png)
 
 ## What this panel contains
 
