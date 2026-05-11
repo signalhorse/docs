@@ -59,7 +59,7 @@ No. GitHub Pages can only host a static documentation site. It cannot run the ba
 The recommended split is:
 
 - GitHub Pages hosts the documentation.
-- Install scripts, ZIPs, DMGs, and Linux binaries remain on `signal.horse` or GitHub Releases.
+- Install scripts, ZIPs, DMGs, and Linux binaries remain on the main site download area at [signal.horse/#install](https://signal.horse/#install) or on GitHub Releases.
 - The docs only reference those official download URLs.
 
 ## 9. Why did my TP / SL not work as expected?

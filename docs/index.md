@@ -29,10 +29,11 @@ Signal Horse is a local-first crypto trading workstation. This handbook focuses 
 | Local UI URL | `http://127.0.0.1:38182/` |
 | Health check | `GET /health` |
 | Root path behavior | `GET /` currently serves both the UI and a health alias |
-| Main Windows artifact | `signal_horse_windows_portable.zip` |
+| Official download area | [Website install/download area](https://signal.horse/#install) |
+| Main Windows artifact | [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip) |
 | Windows launcher | `Start Signal Executor.cmd` |
-| Linux / macOS one-line installer | `https://signal.horse/install.sh` |
-| Windows one-line installer | `https://signal.horse/install.ps1` |
+| Linux / macOS one-line installer | [install.sh](https://signal.horse/install.sh) |
+| Windows one-line installer | [install.ps1](https://signal.horse/install.ps1) |
 
 ## Who this handbook is for
 

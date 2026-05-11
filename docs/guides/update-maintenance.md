@@ -6,6 +6,8 @@ This chapter is for users who already have Signal Horse running. It focuses on t
 2. How to restart or recover it
 3. How to update to a newer version
 
+If you need to find the current public download entry again, open the [official website download area](https://signal.horse/#install).
+
 ## What to check first in daily maintenance
 
 The health endpoint is always the first check:
@@ -44,11 +46,7 @@ If you are not using service mode and are instead running the program directly i
 
 ## Windows update method
 
-The current primary Windows release artifact is:
-
-```text
-signal_horse_windows_portable.zip
-```
+The current primary Windows release artifact is [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip).
 
 The PowerShell install helper in the current project will:
 
@@ -63,7 +61,7 @@ So the safest Windows update method is one of these:
 Steps:
 
 1. Stop the currently running `SignalHorse.exe`
-2. Download the new `signal_horse_windows_portable.zip`
+2. Download the new [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip)
 3. Extract it and overwrite the old directory
 4. Run `Start Signal Executor.cmd` again
 
@@ -82,7 +80,7 @@ Stop Signal Executor.cmd
 
 ## Linux / macOS update method
 
-The install script re-downloads or replaces the target binary, so the most direct update flow is usually to run the installer script again:
+The install script re-downloads or replaces the target binary, so the most direct update flow is usually to run the installer script again. The same installer entry is also listed in the [official website download area](https://signal.horse/#install):
 
 ```bash
 curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service

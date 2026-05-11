@@ -29,10 +29,11 @@ Signal Horse 是一个本地优先的加密交易工作台。这份手册以 `ru
 | 本地 UI 地址 | `http://127.0.0.1:38182/` |
 | 健康检查 | `GET /health` |
 | 根路径行为 | `GET /` 当前同时作为 UI 入口和健康别名 |
-| Windows 主发布物 | `signal_horse_windows_portable.zip` |
+| 官网下载安装区 | [官网下载安装区](https://signal.horse/#install) |
+| Windows 主发布物 | [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip) |
 | Windows 启动脚本 | `Start Signal Executor.cmd` |
-| Linux / macOS 一键安装 | `https://signal.horse/install.sh` |
-| Windows 一键安装 | `https://signal.horse/install.ps1` |
+| Linux / macOS 一键安装 | [install.sh](https://signal.horse/install.sh) |
+| Windows 一键安装 | [install.ps1](https://signal.horse/install.ps1) |
 
 ## 适合谁使用
 

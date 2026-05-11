@@ -2,6 +2,8 @@
 
 本章说明如何把 Signal Horse 安装到你的本机或服务器，并确认安装物、启动方式和访问地址都符合当前项目事实。
 
+如果你想先到一个统一入口选择 Windows ZIP、macOS DMG 或安装脚本，直接打开 [官网下载安装区](https://signal.horse/#install)。
+
 ## 安装前准备
 
 - 优先准备测试网或模拟盘凭据，不要第一次就直接使用实盘账户。
@@ -12,15 +14,11 @@
 
 === "Windows"
 
-    当前推荐安装物是：
-
-    ```text
-    signal_horse_windows_portable.zip
-    ```
+    当前推荐安装物是 [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip)。
 
     操作步骤：
 
-    1. 下载并解压 `signal_horse_windows_portable.zip`。
+    1. 下载并解压 [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip)。
     2. 打开解压后的目录。
     3. 运行 `Start Signal Executor.cmd`。
     4. 程序会尝试在后台启动 `SignalHorse.exe`，然后打开本地浏览器界面。
@@ -49,6 +47,8 @@
     signal-executor-macos-amd64.dmg
     ```
 
+    可从 [官网下载安装区](https://signal.horse/#install) 选择对应架构的 macOS 下载项。
+
     桌面用户建议：
 
     1. 下载对应架构的 `.dmg`。
@@ -65,6 +65,8 @@
 === "Linux"
 
     Linux 当前推荐使用一键安装脚本：
+
+    如果你想先从官网入口进入，也可以直接打开 [官网下载安装区](https://signal.horse/#install)。
 
     ```bash
     curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service

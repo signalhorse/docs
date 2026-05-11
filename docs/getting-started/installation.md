@@ -2,6 +2,8 @@
 
 This chapter explains how to install Signal Horse on your local machine or server, and how to confirm that the package, startup method, and access URL match the current product behavior.
 
+If you want one place to choose the current Windows ZIP, macOS DMG, or installer script first, open the [official website download area](https://signal.horse/#install).
+
 ## Before you install
 
 - Prepare testnet or paper-trading credentials first. Do not start with a live account on day one.
@@ -12,15 +14,11 @@ This chapter explains how to install Signal Horse on your local machine or serve
 
 === "Windows"
 
-    The currently recommended package is:
-
-    ```text
-    signal_horse_windows_portable.zip
-    ```
+    The currently recommended package is [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip).
 
     Steps:
 
-    1. Download and extract `signal_horse_windows_portable.zip`.
+    1. Download and extract [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip).
     2. Open the extracted folder.
     3. Run `Start Signal Executor.cmd`.
     4. The program will try to start `SignalHorse.exe` in the background and then open the local browser UI.
@@ -49,6 +47,8 @@ This chapter explains how to install Signal Horse on your local machine or serve
     signal-executor-macos-amd64.dmg
     ```
 
+    Choose the matching macOS download from the [official website download area](https://signal.horse/#install).
+
     For desktop users, the recommended flow is:
 
     1. Download the `.dmg` that matches your CPU architecture.
@@ -65,6 +65,8 @@ This chapter explains how to install Signal Horse on your local machine or serve
 === "Linux"
 
     The current recommended Linux method is the one-line installer:
+
+    You can also start from the [official website download area](https://signal.horse/#install) and use the same installer entry there.
 
     ```bash
     curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service

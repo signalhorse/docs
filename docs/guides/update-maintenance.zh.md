@@ -6,6 +6,8 @@
 2. 怎么重启或恢复运行
 3. 怎么更新到新版本
 
+如果你需要重新找到当前公开下载入口，直接打开 [官网下载安装区](https://signal.horse/#install)。
+
 ## 日常维护先看什么
 
 最先检查的永远是健康接口：
@@ -44,11 +46,7 @@ signal-executor service uninstall
 
 ## Windows 更新方式
 
-当前 Windows 主发布物是：
-
-```text
-signal_horse_windows_portable.zip
-```
+当前 Windows 主发布物是 [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip)。
 
 当前项目里的 PowerShell 安装辅助脚本会：
 
@@ -63,7 +61,7 @@ signal_horse_windows_portable.zip
 步骤：
 
 1. 停掉当前运行的 `SignalHorse.exe`
-2. 下载新的 `signal_horse_windows_portable.zip`
+2. 下载新的 [signal_horse_windows_portable.zip](https://signal.horse/releases/latest/signal_horse_windows_portable.zip)
 3. 解压并覆盖旧目录
 4. 再运行 `Start Signal Executor.cmd`
 
@@ -82,7 +80,7 @@ Stop Signal Executor.cmd
 
 ## Linux / macOS 更新方式
 
-安装脚本会重新下载或替换目标二进制，所以最直接的更新方式通常是重新执行安装脚本：
+安装脚本会重新下载或替换目标二进制，所以最直接的更新方式通常是重新执行安装脚本。这个安装入口也会出现在 [官网下载安装区](https://signal.horse/#install)：
 
 ```bash
 curl -fsSL https://signal.horse/install.sh | bash -s -- --non-interactive --skip-credentials --install-service

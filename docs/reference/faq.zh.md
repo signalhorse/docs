@@ -59,7 +59,7 @@ http://<server-ip>:38182/
 推荐做法是：
 
 - GitHub Pages 负责托管文档。
-- 安装脚本、ZIP、DMG、Linux 二进制继续放在 `signal.horse` 或 GitHub Releases。
+- 安装脚本、ZIP、DMG、Linux 二进制继续放在主站下载区 [signal.horse/#install](https://signal.horse/#install) 或 GitHub Releases。
 - 文档里只引用这些正式下载地址。
 
 ## 9. 为什么我设置了 TP / SL，却没有按预期工作？
