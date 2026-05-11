@@ -1,6 +1,6 @@
 site_name: Signal Horse 用户手册
 site_description: Signal Horse 本地优先交易工作台使用手册
-site_url: https://signalhorse.github.io/docs/
+site_url: https://docs.signal.horse/
 docs_dir: docs
 site_dir: site
 strict: true
