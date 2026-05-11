@@ -1,196 +1,122 @@
-# API 附录
+# API 接口参考
 
-这一章放在手册最后，面向集成方和高级使用者。普通用户如果只是通过 UI 使用 Signal Horse，可以先跳过本页。
-
-如果你已经熟悉了界面操作，又准备做脚本联调、二次开发或外部 AI 工具接入，再继续看下面的接口说明。
+这里是 Signal Horse 本地 HTTP 和 WebSocket 接口的详细参考页。左侧导航已经按接口名拆开，方便你直接跳到目标端点。
 
 ## 基本地址
 
-默认本地地址：
+默认本地执行器监听地址：
 
 ```text
 http://127.0.0.1:38182
 ```
 
-常用入口：
+WebSocket 行情流使用同一主机：
 
-- `GET /`：当前可作为 UI 入口，也兼容健康别名。
-- `GET /health`：服务健康检查。
+```text
+ws://127.0.0.1:38182/ws/klines
+```
 
-## 认证与账户模型
+## 认证模型
 
-写请求和私有读请求通常有两种方式：
+私有读接口和交易写接口支持两种凭据风格：
 
-1. 传 `account_id`
-2. 直接传 `api_key`、`secret_key`、`passphrase`
+1. 推荐：传 `account_id`，复用本地 UI 中已经保存的账户。
+2. 兜底：直接传 `api_key`、`secret_key`、`passphrase`。
 
-### 当前常用字段
+当前契约有一个容易忽略的点：
+
+- 即使传了 `account_id`，请求里仍然需要带 `exchange`，因为路由解析阶段需要它。
+- 完成账户查找后，已保存账户里的 `exchange` 和 `testnet` 会覆盖请求中的对应值。
+- `passphrase` 只在 OKX 和 Bitget 上需要。
+
+## 常用请求字段
 
 | 字段 | 含义 |
 | --- | --- |
-| `exchange` | `okx` / `binance` / `bitget` / `gate` / `bybit` |
+| `exchange` | `okx`、`binance`、`bitget`、`gate`、`bybit` |
 | `asset_type` | `spot` 或 `swap` |
-| `symbol` | 例如 `BTCUSDT` 或 `BTC/USDT` |
-| `testnet` | `true` 走测试网，省略或 `false` 走实盘 |
-| `account_id` | 使用已保存账户 |
-| `api_key` | 直接传 API Key |
-| `secret_key` | 直接传 Secret |
-| `passphrase` | OKX / Bitget 需要 |
+| `symbol` | `BTCUSDT`、`BTC/USDT` 这类交易对写法 |
+| `account_id` | 由 `/accounts` 返回的 UUID |
+| `api_key` / `secret_key` | 直接传交易所密钥 |
+| `passphrase` | OKX 和 Bitget 的口令 |
+| `testnet` | `true` 走测试网或模拟盘，省略或 `false` 走实盘 |
+| `quantity_unit` | `base` 或 `exchange`，用于区分数量语义 |
 
-## 端点分组
+## 响应约定
+
+不同接口族的响应包裹略有区别：
+
+- 大多数私有读接口和交易写接口返回 `ApiResponse<T>`。
+- `/health` 返回原始 JSON，不带 `success` 或 `data` 包裹。
+- `/accounts`、`/settings/*`、`/market/*` 返回各自独立的 JSON 结构。
+- `/ai/proxy` 会直接透传上游状态码和响应体。
+
+常见成功包裹：
+
+```json
+{
+  "success": true,
+  "data": { "...": "..." }
+}
+```
+
+常见失败包裹：
+
+```json
+{
+  "success": false,
+  "error": "可读错误信息"
+}
+```
+
+## 接口地图
 
 ### 服务与健康
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| GET | `/` | 当前同时承担 UI 入口和健康别名 |
-| GET | `/health` | 服务是否可用 |
+- [GET /health](api/health.md)
 
 ### 私有读接口
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| GET | `/positions` | 读取合约持仓 |
-| GET | `/balances` | 读取余额 |
-| GET | `/orders-history` | 读取历史订单 |
-| GET | `/positions-history` | 读取历史仓位 |
-| GET | `/open-orders` | 当前挂单 |
-| GET | `/open-tpsl-orders` | 当前 TP / SL 订单 |
+- [GET /positions](api/positions.md)
+- [GET /balances](api/balances.md)
+- [GET /orders-history](api/orders-history.md)
+- [GET /positions-history](api/positions-history.md)
+- [GET /open-orders](api/open-orders.md)
+- [GET /open-tpsl-orders](api/open-tpsl-orders.md)
 
 ### 交易写接口
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| POST | `/place-order` | 下单主入口 |
-| POST | `/order` | 旧别名，兼容保留 |
-| POST | `/cancel-order` | 撤销普通订单 |
-| POST | `/close-all` | 平仓 / 清仓 |
-| POST | `/set-leverage` | 设置杠杆 |
-| POST | `/set-margin-mode` | 设置保证金模式 |
-| POST | `/set-tpsl` | 设置 TP / SL |
-| POST | `/cancel-tpsl` | 取消 TP / SL |
+- [POST /place-order](api/place-order.md)
+- [POST /cancel-order](api/cancel-order.md)
+- [POST /cancel-open-orders](api/cancel-open-orders.md)
+- [POST /close-all](api/close-all.md)
+- [POST /set-leverage](api/set-leverage.md)
+- [POST /set-margin-mode](api/set-margin-mode.md)
+- [POST /set-tpsl](api/set-tpsl.md)
+- [POST /cancel-tpsl](api/cancel-tpsl.md)
 
 ### 账户与本地设置
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| GET | `/accounts` | 列出本地已保存账户 |
-| POST | `/accounts` | 保存账户 |
-| PUT | `/accounts/:id` | 更新账户 |
-| DELETE | `/accounts/:id` | 删除账户 |
-| POST | `/accounts/test` | 测试凭据但不保存 |
-| GET | `/accounts/:id/test` | 测试已保存账户 |
-| GET | `/settings/ai` | 读取 AI 设置 |
-| POST | `/settings/ai` | 保存 AI 设置 |
+- [/accounts](api/accounts.md)
+- [/accounts/:id](api/account-by-id.md)
+- [/accounts/test](api/account-test.md)
+- [/accounts/:id/test](api/account-by-id-test.md)
+- [/settings/ai](api/settings-ai.md)
+- [/settings/bots](api/settings-bots.md)
 
-### 公共市场数据
+### 市场数据与 AI
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| GET | `/market/symbols` | 可交易 symbol 列表 |
-| GET | `/market/ticker` | 单个 symbol 行情 |
-| GET | `/market/tickers` | 批量 ticker |
-| GET | `/market/klines` | K 线数据 |
-| WS | `/ws/klines` | 实时 K 线代理 |
+- [GET /market/symbols](api/market-symbols.md)
+- [GET /market/ticker](api/market-ticker.md)
+- [GET /market/tickers](api/market-tickers.md)
+- [GET /market/klines](api/market-klines.md)
+- [WS /ws/klines](api/ws-klines.md)
+- [POST /ai/proxy](api/ai-proxy.md)
 
-### AI 代理
+## 推荐接入顺序
 
-| 方法 | 端点 | 说明 |
-| --- | --- | --- |
-| POST | `/ai/proxy` | 把聊天补全请求代理到配置好的 AI 提供方 |
-
-## 示例：健康检查
-
-```bash
-curl -fsS http://127.0.0.1:38182/health
-```
-
-## 示例：读取余额
-
-如果你使用保存后的账户，可以优先使用 `account_id` 风格。
-
-```text
-GET /balances?exchange=bybit&account_id=<saved-account-id>&testnet=true
-```
-
-如果你只是临时联调，也可以直接传凭据，但更适合在本机安全环境中使用。
-
-## 示例：下市价单
-
-```bash
-curl -X POST http://127.0.0.1:38182/place-order \
-  -H "Content-Type: application/json" \
-  -d '{
-    "exchange": "bybit",
-    "symbol": "BTCUSDT",
-    "asset_type": "swap",
-    "side": "buy",
-    "action": "open",
-    "quantity": 0.001,
-    "quantity_unit": "base",
-    "leverage": 3,
-    "order_type": "market",
-    "account_id": "<saved-account-id>",
-    "testnet": true
-  }'
-```
-
-### 下单字段说明
-
-| 字段 | 是否常用 | 说明 |
-| --- | --- | --- |
-| `symbol` | 是 | 交易对 |
-| `asset_type` | 是 | `spot` 或 `swap` |
-| `side` | 是 | `buy` 或 `sell` |
-| `quantity` | 是 | 下单数量 |
-| `quantity_unit` | 推荐 | 合约场景建议显式用 `base` 表示币数量 |
-| `leverage` | 合约常用 | 默认 `1` |
-| `margin_mode` | 合约可选 | `cross` / `isolated` |
-| `position_side` | 对冲模式常用 | `long` / `short` |
-| `action` | 合约常用 | `open` / `close` |
-| `order_type` | 常用 | `market` / `limit` |
-| `price` | 限价单必填 | 限价价格 |
-| `trigger_price` | 条件单常用 | 触发价 |
-| `trigger_direction` | 条件单常用 | `above` / `below` |
-| `testnet` | 强烈推荐 | 先用测试网验证 |
-
-## 示例：设置 TP / SL
-
-```bash
-curl -X POST http://127.0.0.1:38182/set-tpsl \
-  -H "Content-Type: application/json" \
-  -d '{
-    "exchange": "bybit",
-    "symbol": "BTCUSDT",
-    "asset_type": "swap",
-    "side": "sell",
-    "quantity": 0.001,
-    "quantity_unit": "base",
-    "take_profit_price": 72000,
-    "stop_loss_price": 68000,
-    "account_id": "<saved-account-id>",
-    "testnet": true
-  }'
-```
-
-### TP / SL 请求字段
-
-| 字段 | 说明 |
-| --- | --- |
-| `symbol` | 交易对 |
-| `asset_type` | `spot` / `swap` |
-| `side` | 保护当前仓位所需的方向 |
-| `quantity` | 保护数量，可选 |
-| `take_profit_price` | 止盈触发价 |
-| `stop_loss_price` | 止损触发价 |
-| `position_side` | 对冲模式下指定 `long` 或 `short` |
-| `account_id` 或直接密钥 | 二选一 |
-| `testnet` | 是否走测试网 |
-
-## 集成建议
-
-!!! tip "本地接入的推荐方式"
-    1. 先调用 `/health`。
-    2. 再调用 `/balances`、`/positions`、`/orders-history` 做只读确认。
-    3. 再执行 `/place-order`、`/set-tpsl` 等写接口。
-    4. 能用 `account_id` 就尽量不要每次都重复传密钥。
+!!! tip "推荐的本地接入方式"
+    1. 先用 [GET /health](api/health.md) 确认本地服务已启动。
+    2. 优先通过 [/accounts](api/accounts.md) 保存账户，再在后续请求里使用 `account_id`。
+    3. 先用 [GET /balances](api/balances.md)、[GET /positions](api/positions.md)、[GET /orders-history](api/orders-history.md) 做只读确认。
+    4. 确认无误后，再使用 [POST /place-order](api/place-order.md)、[POST /set-tpsl](api/set-tpsl.md) 这类写接口。

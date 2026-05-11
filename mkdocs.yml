@@ -81,7 +81,40 @@ plugins:
                 - Updates and Maintenance: guides/update-maintenance.md
             - Reference:
                 - FAQ: reference/faq.md
-                - API Appendix (Advanced): reference/api.md
+                - API Reference:
+                    - Overview: reference/api.md
+                    - Service and Health:
+                        - GET /health: reference/api/health.md
+                    - Private Read APIs:
+                        - GET /positions: reference/api/positions.md
+                        - GET /balances: reference/api/balances.md
+                        - GET /orders-history: reference/api/orders-history.md
+                        - GET /positions-history: reference/api/positions-history.md
+                        - GET /open-orders: reference/api/open-orders.md
+                        - GET /open-tpsl-orders: reference/api/open-tpsl-orders.md
+                    - Trading Write APIs:
+                        - POST /place-order: reference/api/place-order.md
+                        - POST /cancel-order: reference/api/cancel-order.md
+                        - POST /cancel-open-orders: reference/api/cancel-open-orders.md
+                        - POST /close-all: reference/api/close-all.md
+                        - POST /set-leverage: reference/api/set-leverage.md
+                        - POST /set-margin-mode: reference/api/set-margin-mode.md
+                        - POST /set-tpsl: reference/api/set-tpsl.md
+                        - POST /cancel-tpsl: reference/api/cancel-tpsl.md
+                    - Accounts and Local Settings:
+                        - /accounts: reference/api/accounts.md
+                        - "/accounts/:id": reference/api/account-by-id.md
+                        - /accounts/test: reference/api/account-test.md
+                        - "/accounts/:id/test": reference/api/account-by-id-test.md
+                        - /settings/ai: reference/api/settings-ai.md
+                        - /settings/bots: reference/api/settings-bots.md
+                    - Market Data and AI:
+                        - GET /market/symbols: reference/api/market-symbols.md
+                        - GET /market/ticker: reference/api/market-ticker.md
+                        - GET /market/tickers: reference/api/market-tickers.md
+                        - GET /market/klines: reference/api/market-klines.md
+                        - WS /ws/klines: reference/api/ws-klines.md
+                        - POST /ai/proxy: reference/api/ai-proxy.md
 
 markdown_extensions:
   - admonition
@@ -138,4 +171,37 @@ nav:
       - 更新与维护: guides/update-maintenance.md
   - 参考:
       - 常见问题: reference/faq.md
-      - API 附录（高级）: reference/api.md
+      - API 接口参考:
+          - 总览: reference/api.md
+          - 服务与健康:
+              - GET /health: reference/api/health.md
+          - 私有读接口:
+              - GET /positions: reference/api/positions.md
+              - GET /balances: reference/api/balances.md
+              - GET /orders-history: reference/api/orders-history.md
+              - GET /positions-history: reference/api/positions-history.md
+              - GET /open-orders: reference/api/open-orders.md
+              - GET /open-tpsl-orders: reference/api/open-tpsl-orders.md
+          - 交易写接口:
+              - POST /place-order: reference/api/place-order.md
+              - POST /cancel-order: reference/api/cancel-order.md
+              - POST /cancel-open-orders: reference/api/cancel-open-orders.md
+              - POST /close-all: reference/api/close-all.md
+              - POST /set-leverage: reference/api/set-leverage.md
+              - POST /set-margin-mode: reference/api/set-margin-mode.md
+              - POST /set-tpsl: reference/api/set-tpsl.md
+              - POST /cancel-tpsl: reference/api/cancel-tpsl.md
+          - 账户与本地设置:
+              - /accounts: reference/api/accounts.md
+              - "/accounts/:id": reference/api/account-by-id.md
+              - /accounts/test: reference/api/account-test.md
+              - "/accounts/:id/test": reference/api/account-by-id-test.md
+              - /settings/ai: reference/api/settings-ai.md
+              - /settings/bots: reference/api/settings-bots.md
+          - 市场数据与 AI:
+              - GET /market/symbols: reference/api/market-symbols.md
+              - GET /market/ticker: reference/api/market-ticker.md
+              - GET /market/tickers: reference/api/market-tickers.md
+              - GET /market/klines: reference/api/market-klines.md
+              - WS /ws/klines: reference/api/ws-klines.md
+              - POST /ai/proxy: reference/api/ai-proxy.md
