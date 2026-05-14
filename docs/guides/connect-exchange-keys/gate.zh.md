@@ -2,6 +2,10 @@
 
 这一页演示怎么为 SignalHorse 创建 Gate.io API 密钥。
 
+如果你还没有 Gate.io 账户，可以先通过这里注册：
+
+[Gate.io 注册链接](https://www.gateport.business/share/SIGNALHO)
+
 Gate.io API 创建地址：
 
 `https://www.gate.com/myaccount/profile/api-key/manage`

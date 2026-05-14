@@ -2,6 +2,10 @@
 
 这一页演示怎么为 SignalHorse 创建 OKX API 密钥。
 
+如果你还没有 OKX 账户，可以先通过这里注册：
+
+[OKX 注册链接](https://www.okx.com/join/SIGNALHORSE)
+
 OKX API 创建地址：
 
 `https://www.okx.com/account/my-api/batch-add`

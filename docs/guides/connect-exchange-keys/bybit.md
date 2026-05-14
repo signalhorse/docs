@@ -2,6 +2,10 @@
 
 Use this page to create a Bybit API key for SignalHorse.
 
+If you do not already have a Bybit account, register here first:
+
+[Bybit registration link](https://www.bybit.com/invite?ref=4LORQ0)
+
 Open the Bybit API management page here:
 
 `https://www.bybit.com/app/user/api-management`

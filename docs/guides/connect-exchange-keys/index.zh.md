@@ -4,6 +4,16 @@
 
 如果你想先认识账户表单里每个字段分别是干什么的，先看 [账户管理窗口](../account-center.md)。如果你只想先看 UI 里的添加流程，先看 [添加账户](../add-account.md)。
 
+## 交易所注册链接
+
+如果你还没有交易所账户，可以先通过下面这些 SignalHorse 注册链接完成注册：
+
+- [OKX 注册链接](https://www.okx.com/join/SIGNALHORSE)
+- [Binance 注册链接](https://www.binance.com/join?ref=SIGNALHORSE)
+- [Bitget 注册链接](https://partner.bitget.com/bg/signalhors)
+- [Bybit 注册链接](https://www.bybit.com/invite?ref=4LORQ0)
+- [Gate.io 注册链接](https://www.gateport.business/share/SIGNALHO)
+
 ## 为什么需要 API 密钥
 
 SignalHorse 通过交易所 API 密钥读取余额、读取持仓，并在你确认后代表你的账户发出交易请求。

@@ -2,6 +2,10 @@
 
 这一页演示怎么为 SignalHorse 创建 Bitget API 密钥。
 
+如果你还没有 Bitget 账户，可以先通过这里注册：
+
+[Bitget 注册链接](https://partner.bitget.com/bg/signalhors)
+
 Bitget API 创建地址：
 
 `https://www.bitget.com/account/newapi`

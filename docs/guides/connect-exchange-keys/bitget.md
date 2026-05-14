@@ -2,6 +2,10 @@
 
 Use this page to create a Bitget API key for SignalHorse.
 
+If you do not already have a Bitget account, register here first:
+
+[Bitget registration link](https://partner.bitget.com/bg/signalhors)
+
 Open the Bitget API creation page here:
 
 `https://www.bitget.com/account/newapi`

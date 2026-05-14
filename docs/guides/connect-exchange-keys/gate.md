@@ -2,6 +2,10 @@
 
 Use this page to create a Gate.io API key for SignalHorse.
 
+If you do not already have a Gate.io account, register here first:
+
+[Gate.io registration link](https://www.gateport.business/share/SIGNALHO)
+
 Open the Gate.io API page here:
 
 `https://www.gate.com/myaccount/profile/api-key/manage`

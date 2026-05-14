@@ -2,6 +2,10 @@
 
 这一页演示怎么为 SignalHorse 创建 Binance API 密钥。
 
+如果你还没有 Binance 账户，可以先通过这里注册：
+
+[Binance 注册链接](https://www.binance.com/join?ref=SIGNALHORSE)
+
 Binance API 管理地址：
 
 `https://www.binance.com/en/my/settings/api-management`

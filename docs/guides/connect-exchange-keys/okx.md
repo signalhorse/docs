@@ -2,6 +2,10 @@
 
 Use this page to create an OKX API key for SignalHorse.
 
+If you do not already have an OKX account, register here first:
+
+[OKX registration link](https://www.okx.com/join/SIGNALHORSE)
+
 Open the OKX API page here:
 
 `https://www.okx.com/account/my-api/batch-add`

@@ -4,6 +4,16 @@ This guide set focuses on one thing only: how to create exchange API keys safely
 
 If you want the field-by-field explanation of the account form first, read [Account Center](../account-center.md). If you only need the in-app add flow, read [Add Accounts](../add-account.md).
 
+## Exchange registration links
+
+If you do not already have an exchange account, use these SignalHorse registration links first:
+
+- [OKX registration link](https://www.okx.com/join/SIGNALHORSE)
+- [Binance registration link](https://www.binance.com/join?ref=SIGNALHORSE)
+- [Bitget registration link](https://partner.bitget.com/bg/signalhors)
+- [Bybit registration link](https://www.bybit.com/invite?ref=4LORQ0)
+- [Gate.io registration link](https://www.gateport.business/share/SIGNALHO)
+
 ## Why you need API keys
 
 SignalHorse uses exchange API keys to read balances, read positions, and submit trades on the exchange account you choose.

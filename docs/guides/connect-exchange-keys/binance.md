@@ -2,6 +2,10 @@
 
 Use this page to create a Binance API key for SignalHorse.
 
+If you do not already have a Binance account, register here first:
+
+[Binance registration link](https://www.binance.com/join?ref=SIGNALHORSE)
+
 Open the Binance API management page here:
 
 `https://www.binance.com/en/my/settings/api-management`

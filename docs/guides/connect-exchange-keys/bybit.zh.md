@@ -2,6 +2,10 @@
 
 这一页演示怎么为 SignalHorse 创建 Bybit API 密钥。
 
+如果你还没有 Bybit 账户，可以先通过这里注册：
+
+[Bybit 注册链接](https://www.bybit.com/invite?ref=4LORQ0)
+
 Bybit API 管理地址：
 
 `https://www.bybit.com/app/user/api-management`
