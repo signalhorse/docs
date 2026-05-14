@@ -14,6 +14,13 @@ Signal Horse is a local-first crypto trading workstation. This handbook focuses 
     4. Then go through [Add Accounts](guides/add-account.md) and [Manual Trading](guides/manual-trading.md) to complete one minimal trading workflow.
     5. After that, move on to [AI and Automation](guides/ai-automation.md).
 
+## Core features at a glance
+
+- Account management: add `OKX`, `Binance`, `Bybit`, `Bitget`, and `Gate.io` accounts from one window, separate live and testnet accounts, and batch-test connectivity.
+- Batch trading: select multiple accounts in the right order panel, send the same open or close instruction to all of them, and use the bottom batch tools for one-pass cleanup.
+- Manual trading: use market, limit, and trigger orders, set TP / SL, and verify positions, open orders, history, and assets from the bottom tabs.
+- AI and automation: use the bottom-right AI analysis entry, the AI quick-order modal, and auto-trade tasks.
+
 ## What this system can do
 
 - Open a unified trading UI in a local browser.
