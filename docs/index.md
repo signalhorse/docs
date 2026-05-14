@@ -1,6 +1,6 @@
 # Signal Horse User Manual
 
-Signal Horse is a local-first crypto trading workstation. This handbook focuses on the local UI provided by `rust_executor`, with an emphasis on understanding the interface, connecting accounts, placing manual orders, using AI-assisted features, and checking results.
+Signal Horse is a local-first crypto trading workstation. This handbook focuses on the local UI provided by `rust_executor`, with an emphasis on understanding the interface, connecting accounts, placing manual and batch trades, using AI-assisted features, and checking results.
 
 ![Signal Horse main UI overview](assets/ui/en/overview-btc-1h.png)
 
@@ -19,8 +19,14 @@ Signal Horse is a local-first crypto trading workstation. This handbook focuses 
 - Open a unified trading UI in a local browser.
 - Switch exchanges, market types, symbols, and timeframes from one page.
 - Connect `OKX`, `Binance`, `Bybit`, `Bitget`, and `Gate.io` through the account center.
-- Place manual trades in the right order panel, set TP / SL, and inspect positions, orders, history, and assets from the bottom tabs.
+- Place manual and batch trades in the right order panel, set TP / SL, and inspect positions, orders, history, and assets from the bottom tabs.
 - Use model analysis and automation through the top `AI` entry and the bottom auto-trade entry points.
+
+## What batch trading means here
+
+- In the right order panel, you can select multiple accounts at the same time and send the same open or close instruction to all of them.
+- With the batch tools at the bottom of the panel, you can close positions or cancel open orders across the currently selected accounts in one pass.
+- Before using it in live accounts, read [Right Order Panel](guides/order-panel.md) and [Manual Trading](guides/manual-trading.md), then validate the workflow with testnet accounts first.
 
 ## Quick facts
 
@@ -43,7 +49,7 @@ Signal Horse is a local-first crypto trading workstation. This handbook focuses 
 
 ## Documentation scope
 
-This documentation is centered on opening the local UI, understanding the interface, configuring accounts, placing manual trades, and using AI plus automation features.
+This documentation is centered on opening the local UI, understanding the interface, configuring accounts, placing manual and batch trades, and using AI plus automation features.
 
 It does not cover:
 
@@ -84,6 +90,6 @@ If you are a normal user, this is the recommended reading path:
 
 - Every main UI region and each major bottom tab
 - Account management, testnet distinction, and connectivity checks
-- Manual trading, TP / SL, batch cleanup, and result verification
+- Manual trading, batch trading, TP / SL, batch cleanup, and result verification
 - AI model management, bottom-right AI analysis, the AI quick-order modal, and the one-click auto-trade launcher
 - Update procedures, maintenance checks, and the advanced API appendix
